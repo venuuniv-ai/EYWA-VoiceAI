@@ -1,0 +1,2063 @@
+{
+  "meta": {
+    "date_utc": "2026-11-03T09:18:08+00:00",
+    "git_commit": "unavailable (CalledProcessError)",
+    "git_dirty": true,
+    "hardware": {
+      "chip": "Apple M2",
+      "ram_bytes": 8589934592,
+      "cpu_count": 8
+    },
+    "os": "macOS 26.6.2",
+    "python": "3.11.17",
+    "packages": {
+      "onnxruntime": "1.31.1",
+      "piper-tts": "1.8.0",
+      "numpy": "2.4.6"
+    },
+    "native": {
+      "whisper.cpp": "v1.9.5",
+      "llama.cpp": "b12066"
+    },
+    "models": [
+      {
+        "dest": "llm/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+      },
+      {
+        "dest": "asr/ggml-base.en.bin",
+        "sha256": "a03779c86df3323075f5e796cb2ce5029f00ec8869eee3fdfb897afe36c6d002"
+      },
+      {
+        "dest": "asr/ggml-small.en.bin",
+        "sha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx",
+        "sha256": "10bb85e071d616fcf4071f369f1799d0491492ab3c5d552ec19fb548fac13195"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx.json",
+        "sha256": "b471dc60d2d8335e819c393d196d6fbf792817f40051257b269878505bc9afb3"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.MODEL_CARD",
+        "sha256": "0ccde6927e5bb4d743f4ea39618a9387ba18cca3351220a8a9cfdbc68b30fcb9"
+      },
+      {
+        "dest": "vad/silero_vad.onnx",
+        "sha256": "1a153a22f4509e292a94e67d6f9b85e8deb25b4988682b7e174c65279d8788e3"
+      }
+    ],
+    "settings": {
+      "llm_ctx": 4096,
+      "llm_parallel_slots": 1,
+      "llm_gpu_layers": "all (99)",
+      "threads": 4,
+      "temperature": 0,
+      "asr_backend": "whisper-server, Metal",
+      "vad_frame_samples": 512,
+      "tts_agent_speaker": 0,
+      "tts_caller_speaker": 20
+    },
+    "system_memory_at_start": {
+      "available_bytes": 2535391232
+    }
+  },
+  "quick": false,
+  "vad": {
+    "load_ms": 37.397000000055414,
+    "memory": {
+      "peak_footprint_bytes": 52167280,
+      "max_rss_bytes": 79609856
+    },
+    "frame_ms": 32.0,
+    "frame_infer_ms": {
+      "n": 757,
+      "p50": 0.10025000028690556,
+      "p95": 0.1132160001361626,
+      "min": 0.097250000180793,
+      "max": 0.3384159999768599,
+      "mean": 0.10215432102082593
+    },
+    "clips": [
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "frames": 343,
+        "speech_frame_fraction": 0.6793002915451894,
+        "first_speech_s": 0.352
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "frames": 39,
+        "speech_frame_fraction": 0.9230769230769231,
+        "first_speech_s": 0.096
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "frames": 127,
+        "speech_frame_fraction": 0.9448818897637795,
+        "first_speech_s": 0.128
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "frames": 248,
+        "speech_frame_fraction": 0.9596774193548387,
+        "first_speech_s": 0.096
+      }
+    ],
+    "silence_max_prob": 0.00891074538230896
+  },
+  "tts": {
+    "load_ms": 944.942582999829,
+    "sample_rate": 22050,
+    "memory": {
+      "peak_footprint_bytes": 215646952,
+      "max_rss_bytes": 243744768
+    },
+    "first_chunk_ms": {
+      "n": 25,
+      "p50": 35.47520799929771,
+      "p95": 71.4213169996583,
+      "min": 31.010499999865715,
+      "max": 72.05454100039788,
+      "mean": 42.004534999941825
+    },
+    "rtf": {
+      "n": 25,
+      "p50": 0.028380540754863265,
+      "p95": 0.030002274585996243,
+      "min": 0.026858801288125646,
+      "max": 0.03055888366684245,
+      "mean": 0.02841727521478977
+    },
+    "runs": [
+      {
+        "chars": 26,
+        "first_chunk_ms": 33.6077080000905,
+        "total_ms": 33.65079200011678,
+        "audio_s": 1.1145578231292517,
+        "rtf": 0.030192055810651652
+      },
+      {
+        "chars": 35,
+        "first_chunk_ms": 39.68645800068771,
+        "total_ms": 39.736249999805295,
+        "audio_s": 1.3003174603174603,
+        "rtf": 0.03055888366684245
+      },
+      {
+        "chars": 59,
+        "first_chunk_ms": 70.56691699926887,
+        "total_ms": 70.64449999961653,
+        "audio_s": 2.5425850340136056,
+        "rtf": 0.027784518139832057
+      },
+      {
+        "chars": 80,
+        "first_chunk_ms": 35.25983300005464,
+        "total_ms": 85.39341600044281,
+        "audio_s": 3.0418140589569163,
+        "rtf": 0.02807318736297954
+      },
+      {
+        "chars": 57,
+        "first_chunk_ms": 34.291250000023865,
+        "total_ms": 65.14820900065388,
+        "audio_s": 2.2755555555555556,
+        "rtf": 0.028629584033490474
+      },
+      {
+        "chars": 26,
+        "first_chunk_ms": 32.554000000345695,
+        "total_ms": 32.60137500001292,
+        "audio_s": 1.1261678004535147,
+        "rtf": 0.028948949691941242
+      },
+      {
+        "chars": 35,
+        "first_chunk_ms": 35.602834000201256,
+        "total_ms": 35.64879199984716,
+        "audio_s": 1.2190476190476192,
+        "rtf": 0.029243149687374622
+      },
+      {
+        "chars": 59,
+        "first_chunk_ms": 67.7342500002851,
+        "total_ms": 67.80287500077975,
+        "audio_s": 2.449705215419501,
+        "rtf": 0.02767797307773981
+      },
+      {
+        "chars": 80,
+        "first_chunk_ms": 37.04341699994984,
+        "total_ms": 86.96379200046067,
+        "audio_s": 3.1230839002267574,
+        "rtf": 0.027845486954143787
+      },
+      {
+        "chars": 57,
+        "first_chunk_ms": 34.958624999489984,
+        "total_ms": 65.58058399969013,
+        "audio_s": 2.3103854875283445,
+        "rtf": 0.028385126358220155
+      },
+      {
+        "chars": 26,
+        "first_chunk_ms": 33.299499999884574,
+        "total_ms": 33.34662499946717,
+        "audio_s": 1.18421768707483,
+        "rtf": 0.028159201946930567
+      },
+      {
+        "chars": 35,
+        "first_chunk_ms": 36.793166999814275,
+        "total_ms": 36.83874999933323,
+        "audio_s": 1.2654875283446712,
+        "rtf": 0.029110322444283895
+      },
+      {
+        "chars": 59,
+        "first_chunk_ms": 71.63491699975566,
+        "total_ms": 71.7209169997659,
+        "audio_s": 2.670294784580499,
+        "rtf": 0.026858801288125646
+      },
+      {
+        "chars": 80,
+        "first_chunk_ms": 35.47520799929771,
+        "total_ms": 85.66933299971424,
+        "audio_s": 3.01859410430839,
+        "rtf": 0.028380540754863265
+      },
+      {
+        "chars": 57,
+        "first_chunk_ms": 34.54170799977874,
+        "total_ms": 64.23329199969885,
+        "audio_s": 2.2407256235827666,
+        "rtf": 0.02866629065320109
+      },
+      {
+        "chars": 26,
+        "first_chunk_ms": 31.010499999865715,
+        "total_ms": 31.056625000019267,
+        "audio_s": 1.1029478458049886,
+        "rtf": 0.028157836400099705
+      },
+      {
+        "chars": 35,
+        "first_chunk_ms": 35.59725000013714,
+        "total_ms": 35.64162499969825,
+        "audio_s": 1.2190476190476192,
+        "rtf": 0.02923727050756497
+      },
+      {
+        "chars": 59,
+        "first_chunk_ms": 72.05454100039788,
+        "total_ms": 72.12900000013178,
+        "audio_s": 2.6354648526077096,
+        "rtf": 0.027368606311999343
+      },
+      {
+        "chars": 80,
+        "first_chunk_ms": 34.98916599983204,
+        "total_ms": 83.73149999988527,
+        "audio_s": 3.0418140589569163,
+        "rtf": 0.027526830495549114
+      },
+      {
+        "chars": 57,
+        "first_chunk_ms": 34.94749999936175,
+        "total_ms": 65.48058299995319,
+        "audio_s": 2.2987755102040817,
+        "rtf": 0.02848498372689725
+      },
+      {
+        "chars": 26,
+        "first_chunk_ms": 32.90987499985931,
+        "total_ms": 32.95629199965333,
+        "audio_s": 1.1493877551020408,
+        "rtf": 0.02867291029799384
+      },
+      {
+        "chars": 35,
+        "first_chunk_ms": 36.33191600056307,
+        "total_ms": 36.378000000695465,
+        "audio_s": 1.2654875283446712,
+        "rtf": 0.028746233515457822
+      },
+      {
+        "chars": 59,
+        "first_chunk_ms": 68.13895899995259,
+        "total_ms": 68.20958399930532,
+        "audio_s": 2.4729251700680273,
+        "rtf": 0.027582550747958522
+      },
+      {
+        "chars": 80,
+        "first_chunk_ms": 35.64441700018506,
+        "total_ms": 86.08745800029283,
+        "audio_s": 3.0418140589569163,
+        "rtf": 0.028301354498247507
+      },
+      {
+        "chars": 57,
+        "first_chunk_ms": 35.43945899946266,
+        "total_ms": 65.61220899948239,
+        "audio_s": 2.3568253968253967,
+        "rtf": 0.02783923199735581
+      }
+    ]
+  },
+  "asr_base.en": {
+    "model": "base.en",
+    "ready_ms": 357.6895420001165,
+    "warmup_ms": 197.95012499980658,
+    "memory": {
+      "peak_footprint_bytes": 300041224,
+      "max_rss_bytes": 342491136
+    },
+    "latency_ms": {
+      "n": 40,
+      "p50": 160.89654150027854,
+      "p95": 223.53434760038894,
+      "min": 107.53720799948496,
+      "max": 276.33691699975316,
+      "mean": 162.4164677750514
+    },
+    "rtf": {
+      "n": 40,
+      "p50": 0.03493742815113151,
+      "p95": 0.08656766904267811,
+      "min": 0.014597768909135828,
+      "max": 0.09280360225230279,
+      "mean": 0.04166512665963278
+    },
+    "by_clip": {
+      "jfk.wav": {
+        "audio_s": 11.0,
+        "latency_ms": {
+          "n": 10,
+          "p50": 162.1282085002349,
+          "p95": 190.43929390013545,
+          "min": 160.5754580004941,
+          "max": 195.96774999990885,
+          "mean": 170.82445000005464
+        },
+        "rtf": {
+          "n": 10,
+          "p50": 0.0147389280454759,
+          "p95": 0.017312663081830493,
+          "min": 0.014597768909135828,
+          "max": 0.017815249999991713,
+          "mean": 0.01552949545455042
+        },
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      "caller_short.wav": {
+        "audio_s": 1.2539375,
+        "latency_ms": {
+          "n": 10,
+          "p50": 108.22729149958832,
+          "p95": 113.58207339944784,
+          "min": 107.53720799948496,
+          "max": 116.36991699924693,
+          "mean": 109.08432929982155
+        },
+        "rtf": {
+          "n": 10,
+          "p50": 0.0863099568356384,
+          "p95": 0.09058033067792282,
+          "min": 0.08575962358529429,
+          "max": 0.09280360225230279,
+          "mean": 0.08699343412237177
+        },
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      "caller_medium.wav": {
+        "audio_s": 4.075125,
+        "latency_ms": {
+          "n": 10,
+          "p50": 143.6334789996181,
+          "p95": 165.79981440049775,
+          "min": 143.35791700068512,
+          "max": 178.74483300056454,
+          "mean": 147.80374590018255
+        },
+        "rtf": {
+          "n": 10,
+          "p50": 0.03524639833124581,
+          "p95": 0.04068582298714708,
+          "min": 0.03517877782906908,
+          "max": 0.04386241722660398,
+          "mean": 0.03626974532074048
+        },
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      "caller_long.wav": {
+        "audio_s": 7.9645,
+        "latency_ms": {
+          "n": 10,
+          "p50": 207.25522949987862,
+          "p95": 274.74069185022927,
+          "min": 206.44341700062796,
+          "max": 276.33691699975316,
+          "mean": 221.95334590014681
+        },
+        "rtf": {
+          "n": 10,
+          "p50": 0.02602237798981463,
+          "p95": 0.03449566097686349,
+          "min": 0.025920449118039795,
+          "max": 0.03469607847319394,
+          "mean": 0.027867831740868453
+        },
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      }
+    },
+    "runs": [
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 161.68649999963236,
+        "rtf": 0.014698772727239306,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 160.5754580004941,
+        "rtf": 0.014597768909135828,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 161.92412500004139,
+        "rtf": 0.014720375000003762,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 162.33229200042842,
+        "rtf": 0.014757481090948038,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 181.24875000012253,
+        "rtf": 0.01647715909092023,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 178.3209169998372,
+        "rtf": 0.016210992454530657,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 161.21762500006298,
+        "rtf": 0.014656147727278452,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 161.28879099960614,
+        "rtf": 0.014662617363600557,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 183.68229200041242,
+        "rtf": 0.016698390181855673,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 195.96774999990885,
+        "rtf": 0.017815249999991713,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 116.36991699924693,
+        "rtf": 0.09280360225230279,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 110.1747089996934,
+        "rtf": 0.08786299875368063,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 108.46495900023001,
+        "rtf": 0.08649949379473061,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 108.32208400006493,
+        "rtf": 0.08638555270901854,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 107.53720799948496,
+        "rtf": 0.08575962358529429,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 108.00483300045016,
+        "rtf": 0.08613254887141518,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 108.24837499967543,
+        "rtf": 0.08632677067212316,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 107.57099999955244,
+        "rtf": 0.0857865722969067,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 108.2062079995012,
+        "rtf": 0.08629314299915364,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 107.94400000031601,
+        "rtf": 0.08608403528909217,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 144.53845800017007,
+        "rtf": 0.03546847225549402,
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 143.53524999933143,
+        "rtf": 0.03522229379450481,
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 143.73170799990476,
+        "rtf": 0.03527050286798681,
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 143.77737500035437,
+        "rtf": 0.035281709150113034,
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 143.44329200048378,
+        "rtf": 0.03519972810661852,
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 143.4491669997442,
+        "rtf": 0.03520116978000532,
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 143.48133400017105,
+        "rtf": 0.03520906328030945,
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 143.35791700068512,
+        "rtf": 0.03517877782906908,
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 149.97812500041618,
+        "rtf": 0.03680331891669978,
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 178.74483300056454,
+        "rtf": 0.04386241722660398,
+        "wer": 0.0,
+        "wer_raw": 0.07142857142857142,
+        "text": "Hi, I need to see Dr. Lee next Tuesday afternoon.\n Around three if possible."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 276.33691699975316,
+        "rtf": 0.03469607847319394,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 272.7897500008112,
+        "rtf": 0.03425070625912627,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 220.94195800036687,
+        "rtf": 0.02774084474861785,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 207.1241250005187,
+        "rtf": 0.026005916881225274,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 206.44341700062796,
+        "rtf": 0.025920449118039795,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 206.84425000035844,
+        "rtf": 0.025970776571078966,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 207.262666999668,
+        "rtf": 0.026023311821164918,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 207.24779200008925,
+        "rtf": 0.02602144415846434,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 206.9485829997575,
+        "rtf": 0.02598387632616705,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 207.5939999995171,
+        "rtf": 0.02606491305160614,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd\n also like to ask whether the clinic is open on Saturday."
+      }
+    ]
+  },
+  "asr_small.en": {
+    "model": "small.en",
+    "ready_ms": 528.8209170003029,
+    "warmup_ms": 469.05087499999354,
+    "memory": {
+      "peak_footprint_bytes": 722339112,
+      "max_rss_bytes": 756301824
+    },
+    "latency_ms": {
+      "n": 40,
+      "p50": 432.01672899976984,
+      "p95": 614.7577523999189,
+      "min": 337.41491599994333,
+      "max": 616.2888749995545,
+      "mean": 438.05325622502096
+    },
+    "rtf": {
+      "n": 40,
+      "p50": 0.08935442861022655,
+      "p95": 0.2797402401633809,
+      "min": 0.03950512118180169,
+      "max": 0.2818726013057454,
+      "mean": 0.1219985309454417
+    },
+    "by_clip": {
+      "jfk.wav": {
+        "audio_s": 11.0,
+        "latency_ms": {
+          "n": 10,
+          "p50": 437.78331250041447,
+          "p95": 441.1935017502856,
+          "min": 434.55633299981855,
+          "max": 441.8694579999283,
+          "mean": 437.74675830009073
+        },
+        "rtf": {
+          "n": 10,
+          "p50": 0.03979848295458313,
+          "p95": 0.04010850015911687,
+          "min": 0.03950512118180169,
+          "max": 0.04016995072726621,
+          "mean": 0.039795159845462794
+        },
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      "caller_short.wav": {
+        "audio_s": 1.2539375,
+        "latency_ms": {
+          "n": 10,
+          "p50": 348.18712500009497,
+          "p95": 352.4353687499115,
+          "min": 337.41491599994333,
+          "max": 353.45062499982305,
+          "mean": 346.5754959000151
+        },
+        "rtf": {
+          "n": 10,
+          "p50": 0.2776750236754982,
+          "p95": 0.28106294671776827,
+          "min": 0.26908431720077225,
+          "max": 0.2818726013057454,
+          "mean": 0.2763897689478264
+        },
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      "caller_medium.wav": {
+        "audio_s": 4.075125,
+        "latency_ms": {
+          "n": 10,
+          "p50": 419.5892289999392,
+          "p95": 425.93564344956576,
+          "min": 412.9298749994632,
+          "max": 429.4771249997211,
+          "mean": 419.60998329996073
+        },
+        "rtf": {
+          "n": 10,
+          "p50": 0.10296352357288163,
+          "p95": 0.1045208781201965,
+          "min": 0.10132937639936522,
+          "max": 0.10538992668929692,
+          "mean": 0.10296861649641686
+        },
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      "caller_long.wav": {
+        "audio_s": 7.9645,
+        "latency_ms": {
+          "n": 10,
+          "p50": 521.1728539998148,
+          "p95": 615.7192312498864,
+          "min": 515.4718330004471,
+          "max": 616.2888749995545,
+          "mean": 548.2807874000173
+        },
+        "rtf": {
+          "n": 10,
+          "p50": 0.06543698336365307,
+          "p95": 0.07730795796972646,
+          "min": 0.06472117935845904,
+          "max": 0.07737948082108789,
+          "mean": 0.06884057849206068
+        },
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      }
+    },
+    "runs": [
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 434.8178749996805,
+        "rtf": 0.03952889772724368,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 436.93550000079995,
+        "rtf": 0.03972140909098181,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 438.631125000029,
+        "rtf": 0.03987555681818445,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 439.08866699985083,
+        "rtf": 0.03991715154544098,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 434.55633299981855,
+        "rtf": 0.03950512118180169,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 436.33287499960716,
+        "rtf": 0.03966662499996429,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 434.56679200062354,
+        "rtf": 0.03950607200005669,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 441.8694579999283,
+        "rtf": 0.04016995072726621,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 440.3673330007223,
+        "rtf": 0.04003339390915657,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      {
+        "clip": "jfk.wav",
+        "audio_s": 11.0,
+        "latency_ms": 440.30162499984726,
+        "rtf": 0.040027420454531566,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "And so, my fellow Americans, ask not what your country can do for you.\n Ask what you can do for your country."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 337.41491599994333,
+        "rtf": 0.26908431720077225,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 341.3641249999273,
+        "rtf": 0.2722337636444618,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 343.43304200046987,
+        "rtf": 0.27388369994554745,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 342.0486249997339,
+        "rtf": 0.2727796441208066,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 349.4365830001698,
+        "rtf": 0.2786714513284512,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 351.1945000000196,
+        "rtf": 0.2800733688880184,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 353.45062499982305,
+        "rtf": 0.2818726013057454,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 350.7547919998615,
+        "rtf": 0.2797227070726105,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 349.7200840001824,
+        "rtf": 0.2788975399493056,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_short.wav",
+        "audio_s": 1.2539375,
+        "latency_ms": 346.93766700002016,
+        "rtf": 0.27667859602254513,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "I'd like to book an appointment."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 421.4864169998691,
+        "rtf": 0.1034290768994495,
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 412.9298749994632,
+        "rtf": 0.10132937639936522,
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 413.02216599979147,
+        "rtf": 0.10135202380289966,
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 419.3645410005047,
+        "rtf": 0.10290838710481388,
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 418.7272920007672,
+        "rtf": 0.10275201177896806,
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 419.14241700033017,
+        "rtf": 0.10285387981971846,
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 420.52891700041073,
+        "rtf": 0.10319411478185596,
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 429.4771249997211,
+        "rtf": 0.10538992668929692,
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 419.81391699937376,
+        "rtf": 0.10301866004094937,
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      {
+        "clip": "caller_medium.wav",
+        "audio_s": 4.075125,
+        "latency_ms": 421.60716599937587,
+        "rtf": 0.10345870764685154,
+        "wer": 0.0,
+        "wer_raw": 0.14285714285714285,
+        "text": "Hi I need to see Dr. Lee next Tuesday afternoon, around 3 if possible."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 615.0230000002921,
+        "rtf": 0.07722054115139583,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 616.2888749995545,
+        "rtf": 0.07737948082108789,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 614.7437919998993,
+        "rtf": 0.07718548458784598,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 526.4253750001444,
+        "rtf": 0.06609647498275402,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 516.9620830001804,
+        "rtf": 0.06490829091596213,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 521.6548749995127,
+        "rtf": 0.06549750455138587,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 515.4718330004471,
+        "rtf": 0.06472117935845904,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 517.45820799988,
+        "rtf": 0.06497058296187833,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 518.0890000001455,
+        "rtf": 0.06504978341391744,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      },
+      {
+        "clip": "caller_long.wav",
+        "audio_s": 7.9645,
+        "latency_ms": 520.690833000117,
+        "rtf": 0.06537646217592027,
+        "wer": 0.0,
+        "wer_raw": 0.0,
+        "text": "Hello, my name is Sam Rivera.\n I'm calling to reschedule my appointment from Monday to Thursday morning, and I'd also like\n to ask whether the clinic is open on Saturday."
+      }
+    ]
+  },
+  "llm": {
+    "ready_ms": 1496.223082999677,
+    "warmup_ttft_ms": 99.37366699978156,
+    "memory": {
+      "peak_footprint_bytes": 222021240,
+      "max_rss_bytes": 1361739776
+    },
+    "ttft_ms": {
+      "n": 25,
+      "p50": 96.77445799934503,
+      "p95": 97.44053360027465,
+      "min": 95.59633299977577,
+      "max": 98.89808299976721,
+      "mean": 96.800784960069
+    },
+    "gen_tokens_per_s": {
+      "n": 25,
+      "p50": 65.65794182049775,
+      "p95": 66.17810717000506,
+      "min": 63.799245042266996,
+      "max": 66.29787369459487,
+      "mean": 65.4142505681935
+    },
+    "prompt_tokens_per_s": {
+      "n": 25,
+      "p50": 485.59062598965477,
+      "p95": 509.0435681885994,
+      "min": 482.1600771456123,
+      "max": 511.63980557687387,
+      "mean": 491.12774741539556
+    },
+    "sample_reply": "Sure, I can help with that. Could you please provide me with your name and the date you'd like to visit?",
+    "runs": [
+      {
+        "ttft_ms": 96.41183300027478,
+        "total_ms": 486.63424999995186,
+        "text": "Sure, I can help with that. Could you please provide me with your name and the date you'd like to visit?",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.992,
+          "prompt_per_token_ms": 2.0650434782608698,
+          "prompt_per_second": 484.25130537308405,
+          "predicted_n": 26,
+          "predicted_ms": 389.91,
+          "predicted_per_token_ms": 15.596400000000001,
+          "predicted_per_second": 64.11736041650636
+        }
+      },
+      {
+        "ttft_ms": 98.89808299976721,
+        "total_ms": 402.6398750002045,
+        "text": "Of course, I can arrange that. Doctor Lee will see you at 3 PM on Tuesday.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 48,
+          "prompt_ms": 96.698,
+          "prompt_per_token_ms": 2.0145416666666667,
+          "prompt_per_second": 496.3908250429172,
+          "predicted_n": 21,
+          "predicted_ms": 303.421,
+          "predicted_per_token_ms": 15.17105,
+          "predicted_per_second": 65.91501577016753
+        }
+      },
+      {
+        "ttft_ms": 96.88754200033145,
+        "total_ms": 414.3857500002923,
+        "text": "Our clinic is open from 8:00 AM to 5:00 PM on Saturdays.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.73,
+          "prompt_per_token_ms": 2.0593478260869564,
+          "prompt_per_second": 485.59062598965477,
+          "predicted_n": 22,
+          "predicted_ms": 317.253,
+          "predicted_per_token_ms": 15.107285714285714,
+          "predicted_per_second": 66.19322748721052
+        }
+      },
+      {
+        "ttft_ms": 97.27716699944722,
+        "total_ms": 477.03595899929496,
+        "text": "I'm sorry, but I'm not able to assist with that. You should contact the clinic directly to cancel your appointment.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 47,
+          "prompt_ms": 95.044,
+          "prompt_per_token_ms": 2.022212765957447,
+          "prompt_per_second": 494.50780691048357,
+          "predicted_n": 26,
+          "predicted_ms": 379.543,
+          "predicted_per_token_ms": 15.18172,
+          "predicted_per_second": 65.86868945020721
+        }
+      },
+      {
+        "ttft_ms": 96.79766699991887,
+        "total_ms": 279.70974999971077,
+        "text": "Certainly, Thursday mornings are a good time for many patients.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.914,
+          "prompt_per_token_ms": 2.0633478260869564,
+          "prompt_per_second": 484.64926143666895,
+          "predicted_n": 13,
+          "predicted_ms": 182.583,
+          "predicted_per_token_ms": 15.21525,
+          "predicted_per_second": 65.72353395442073
+        }
+      },
+      {
+        "ttft_ms": 96.54170799967687,
+        "total_ms": 477.66904099989915,
+        "text": "Sure, I can help with that. Could you please provide me with your name and the date you'd like to visit?",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.712,
+          "prompt_per_token_ms": 2.0589565217391304,
+          "prompt_per_second": 485.68291240814256,
+          "predicted_n": 26,
+          "predicted_ms": 380.894,
+          "predicted_per_token_ms": 15.23576,
+          "predicted_per_second": 65.63505857272627
+        }
+      },
+      {
+        "ttft_ms": 95.59633299977577,
+        "total_ms": 398.6103750003167,
+        "text": "Of course, I can arrange that. Doctor Lee will see you at 3 PM on Tuesday.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 48,
+          "prompt_ms": 93.816,
+          "prompt_per_token_ms": 1.9545000000000001,
+          "prompt_per_second": 511.63980557687387,
+          "predicted_n": 21,
+          "predicted_ms": 302.946,
+          "predicted_per_token_ms": 15.147300000000001,
+          "predicted_per_second": 66.0183663095073
+        }
+      },
+      {
+        "ttft_ms": 96.801833000427,
+        "total_ms": 417.58416700031376,
+        "text": "Our clinic is open from 8:00 AM to 5:00 PM on Saturdays.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.92,
+          "prompt_per_token_ms": 2.0634782608695654,
+          "prompt_per_second": 484.6186262115466,
+          "predicted_n": 22,
+          "predicted_ms": 320.703,
+          "predicted_per_token_ms": 15.271571428571427,
+          "predicted_per_second": 65.48114610714586
+        }
+      },
+      {
+        "ttft_ms": 96.2718330001735,
+        "total_ms": 475.719707999815,
+        "text": "I'm sorry, but I'm not able to assist with that. You should contact the clinic directly to cancel your appointment.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 47,
+          "prompt_ms": 94.527,
+          "prompt_per_token_ms": 2.011212765957447,
+          "prompt_per_second": 497.21243665830923,
+          "predicted_n": 26,
+          "predicted_ms": 379.332,
+          "predicted_per_token_ms": 15.17328,
+          "predicted_per_second": 65.90532831398353
+        }
+      },
+      {
+        "ttft_ms": 96.39562499978638,
+        "total_ms": 278.8025829995604,
+        "text": "Certainly, Thursday mornings are a good time for many patients.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.787,
+          "prompt_per_token_ms": 2.0605869565217394,
+          "prompt_per_second": 485.2986168989418,
+          "predicted_n": 13,
+          "predicted_ms": 182.067,
+          "predicted_per_token_ms": 15.17225,
+          "predicted_per_second": 65.9098024353672
+        }
+      },
+      {
+        "ttft_ms": 96.57425000023068,
+        "total_ms": 474.90470799948525,
+        "text": "Sure, I can help with that. Could you please provide me with your name and the date you'd like to visit?",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.774,
+          "prompt_per_token_ms": 2.060304347826087,
+          "prompt_per_second": 485.3651845442843,
+          "predicted_n": 26,
+          "predicted_ms": 378.114,
+          "predicted_per_token_ms": 15.124559999999999,
+          "predicted_per_second": 66.11762590118325
+        }
+      },
+      {
+        "ttft_ms": 96.09950000049139,
+        "total_ms": 398.98183300010714,
+        "text": "Of course, I can arrange that. Doctor Lee will see you at 3 PM on Tuesday.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 48,
+          "prompt_ms": 94.242,
+          "prompt_per_token_ms": 1.963375,
+          "prompt_per_second": 509.32705163302984,
+          "predicted_n": 21,
+          "predicted_ms": 302.654,
+          "predicted_per_token_ms": 15.1327,
+          "predicted_per_second": 66.08206070298097
+        }
+      },
+      {
+        "ttft_ms": 97.39549999994779,
+        "total_ms": 421.3536249999379,
+        "text": "Our clinic is open from 8:00 AM to 5:00 PM on Saturdays.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 95.404,
+          "prompt_per_token_ms": 2.074,
+          "prompt_per_second": 482.1600771456123,
+          "predicted_n": 22,
+          "predicted_ms": 323.756,
+          "predicted_per_token_ms": 15.41695238095238,
+          "predicted_per_second": 64.8636627583736
+        }
+      },
+      {
+        "ttft_ms": 96.49841699956596,
+        "total_ms": 473.86591699978453,
+        "text": "I'm sorry, but I'm not able to assist with that. You should contact the clinic directly to cancel your appointment.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 47,
+          "prompt_ms": 94.658,
+          "prompt_per_token_ms": 2.0140000000000002,
+          "prompt_per_second": 496.5243296921549,
+          "predicted_n": 26,
+          "predicted_ms": 377.086,
+          "predicted_per_token_ms": 15.083440000000001,
+          "predicted_per_second": 66.29787369459487
+        }
+      },
+      {
+        "ttft_ms": 96.77445799934503,
+        "total_ms": 280.1946669997051,
+        "text": "Certainly, Thursday mornings are a good time for many patients.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.77,
+          "prompt_per_token_ms": 2.060217391304348,
+          "prompt_per_second": 485.3856705708558,
+          "predicted_n": 13,
+          "predicted_ms": 183.113,
+          "predicted_per_token_ms": 15.259416666666667,
+          "predicted_per_second": 65.53330457149411
+        }
+      },
+      {
+        "ttft_ms": 96.72391700041771,
+        "total_ms": 476.6095420000056,
+        "text": "Sure, I can help with that. Could you please provide me with your name and the date you'd like to visit?",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.837,
+          "prompt_per_token_ms": 2.0616739130434785,
+          "prompt_per_second": 485.0427575735209,
+          "predicted_n": 26,
+          "predicted_ms": 379.706,
+          "predicted_per_token_ms": 15.18824,
+          "predicted_per_second": 65.84041337245131
+        }
+      },
+      {
+        "ttft_ms": 97.02375000051688,
+        "total_ms": 401.81529100027547,
+        "text": "Of course, I can arrange that. Doctor Lee will see you at 3 PM on Tuesday.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 48,
+          "prompt_ms": 95.031,
+          "prompt_per_token_ms": 1.9798125000000002,
+          "prompt_per_second": 505.0983363323546,
+          "predicted_n": 21,
+          "predicted_ms": 304.609,
+          "predicted_per_token_ms": 15.23045,
+          "predicted_per_second": 65.65794182049775
+        }
+      },
+      {
+        "ttft_ms": 96.95170800023334,
+        "total_ms": 419.5850000005521,
+        "text": "Our clinic is open from 8:00 AM to 5:00 PM on Saturdays.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.822,
+          "prompt_per_token_ms": 2.0613478260869567,
+          "prompt_per_second": 485.11948703887276,
+          "predicted_n": 22,
+          "predicted_ms": 322.416,
+          "predicted_per_token_ms": 15.353142857142856,
+          "predicted_per_second": 65.13324400774155
+        }
+      },
+      {
+        "ttft_ms": 96.87466700052028,
+        "total_ms": 476.68945900022663,
+        "text": "I'm sorry, but I'm not able to assist with that. You should contact the clinic directly to cancel your appointment.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 47,
+          "prompt_ms": 94.806,
+          "prompt_per_token_ms": 2.0171489361702126,
+          "prompt_per_second": 495.7492141847562,
+          "predicted_n": 26,
+          "predicted_ms": 379.573,
+          "predicted_per_token_ms": 15.18292,
+          "predicted_per_second": 65.863483440603
+        }
+      },
+      {
+        "ttft_ms": 96.68183299982047,
+        "total_ms": 281.6034999996191,
+        "text": "Certainly, Thursday mornings are a good time for many patients.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.695,
+          "prompt_per_token_ms": 2.058586956521739,
+          "prompt_per_second": 485.77010401816364,
+          "predicted_n": 13,
+          "predicted_ms": 184.602,
+          "predicted_per_token_ms": 15.3835,
+          "predicted_per_second": 65.00471284168103
+        }
+      },
+      {
+        "ttft_ms": 96.72229100033292,
+        "total_ms": 484.8953749997236,
+        "text": "Sure, I can help with that. Could you please provide me with your name and the date you'd like to visit?",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.959,
+          "prompt_per_token_ms": 2.064326086956522,
+          "prompt_per_second": 484.41959161322256,
+          "predicted_n": 26,
+          "predicted_ms": 387.943,
+          "predicted_per_token_ms": 15.517719999999999,
+          "predicted_per_second": 64.44245675266728
+        }
+      },
+      {
+        "ttft_ms": 96.46200000042882,
+        "total_ms": 405.5958749995625,
+        "text": "Of course, I can arrange that. Doctor Lee will see you at 3 PM on Tuesday.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 48,
+          "prompt_ms": 94.505,
+          "prompt_per_token_ms": 1.9688541666666666,
+          "prompt_per_second": 507.90963441087774,
+          "predicted_n": 21,
+          "predicted_ms": 308.882,
+          "predicted_per_token_ms": 15.4441,
+          "predicted_per_second": 64.74964549569091
+        }
+      },
+      {
+        "ttft_ms": 96.9771669997499,
+        "total_ms": 422.4172920003184,
+        "text": "Our clinic is open from 8:00 AM to 5:00 PM on Saturdays.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 94.974,
+          "prompt_per_token_ms": 2.0646521739130437,
+          "prompt_per_second": 484.3430833701855,
+          "predicted_n": 22,
+          "predicted_ms": 325.172,
+          "predicted_per_token_ms": 15.484380952380954,
+          "predicted_per_second": 64.581206253921
+        }
+      },
+      {
+        "ttft_ms": 97.45179200035636,
+        "total_ms": 484.3421249997846,
+        "text": "I'm sorry, but I'm not able to assist with that. You should contact the clinic directly to cancel your appointment.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 47,
+          "prompt_ms": 95.378,
+          "prompt_per_token_ms": 2.02931914893617,
+          "prompt_per_second": 492.7761118916312,
+          "predicted_n": 26,
+          "predicted_ms": 386.866,
+          "predicted_per_token_ms": 15.474639999999999,
+          "predicted_per_second": 64.62185873144706
+        }
+      },
+      {
+        "ttft_ms": 96.9287500001883,
+        "total_ms": 285.1473750006335,
+        "text": "Certainly, Thursday mornings are a good time for many patients.",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 95.167,
+          "prompt_per_token_ms": 2.0688478260869565,
+          "prompt_per_second": 483.360828858743,
+          "predicted_n": 13,
+          "predicted_ms": 188.09,
+          "predicted_per_token_ms": 15.674166666666666,
+          "predicted_per_second": 63.799245042266996
+        }
+      }
+    ],
+    "llama_bench": [
+      {
+        "build_commit": "713319e",
+        "build_number": 1,
+        "cpu_info": "Accelerate, Apple M2",
+        "gpu_info": "Apple M2",
+        "backends": "MTL,BLAS",
+        "model_filename": "/Users/pragnyathreddie/Documents/Eywa-VoiceAI/models/llm/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "model_type": "qwen2 1.5B Q4_K - Medium",
+        "model_size": 1111370240,
+        "model_n_params": 1777088000,
+        "n_batch": 2048,
+        "n_ubatch": 512,
+        "n_threads": 4,
+        "cpu_mask": "0x0",
+        "cpu_strict": false,
+        "poll": 50,
+        "type_k": "f16",
+        "type_v": "f16",
+        "n_gpu_layers": -1,
+        "n_cpu_moe": 0,
+        "split_mode": "layer",
+        "main_gpu": 0,
+        "no_kv_offload": false,
+        "flash_attn": -1,
+        "devices": "auto",
+        "tensor_split": "0.00",
+        "tensor_buft_overrides": "none",
+        "load_mode": "auto",
+        "lazy_mode": "auto",
+        "embeddings": false,
+        "no_op_offload": 0,
+        "no_host": false,
+        "repack": true,
+        "fit_target": 0,
+        "fit_min_ctx": 0,
+        "n_prompt": 256,
+        "n_gen": 0,
+        "n_depth": 0,
+        "test_time": "2026-11-03T09:18:57Z",
+        "avg_ns": 355172445,
+        "stddev_ns": 772655,
+        "avg_ts": 720.778912,
+        "stddev_ts": 1.569718,
+        "samples_ns": [
+          354293792,
+          355745834,
+          355477709
+        ],
+        "samples_ts": [
+          722.564,
+          719.615,
+          720.158
+        ]
+      },
+      {
+        "build_commit": "713319e",
+        "build_number": 1,
+        "cpu_info": "Accelerate, Apple M2",
+        "gpu_info": "Apple M2",
+        "backends": "MTL,BLAS",
+        "model_filename": "/Users/pragnyathreddie/Documents/Eywa-VoiceAI/models/llm/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "model_type": "qwen2 1.5B Q4_K - Medium",
+        "model_size": 1111370240,
+        "model_n_params": 1777088000,
+        "n_batch": 2048,
+        "n_ubatch": 512,
+        "n_threads": 4,
+        "cpu_mask": "0x0",
+        "cpu_strict": false,
+        "poll": 50,
+        "type_k": "f16",
+        "type_v": "f16",
+        "n_gpu_layers": -1,
+        "n_cpu_moe": 0,
+        "split_mode": "layer",
+        "main_gpu": 0,
+        "no_kv_offload": false,
+        "flash_attn": -1,
+        "devices": "auto",
+        "tensor_split": "0.00",
+        "tensor_buft_overrides": "none",
+        "load_mode": "auto",
+        "lazy_mode": "auto",
+        "embeddings": false,
+        "no_op_offload": 0,
+        "no_host": false,
+        "repack": true,
+        "fit_target": 0,
+        "fit_min_ctx": 0,
+        "n_prompt": 0,
+        "n_gen": 64,
+        "n_depth": 0,
+        "test_time": "2026-11-03T09:18:58Z",
+        "avg_ns": 964057486,
+        "stddev_ns": 2691998,
+        "avg_ts": 66.386428,
+        "stddev_ts": 0.185356,
+        "samples_ns": [
+          964032084,
+          966761917,
+          961378458
+        ],
+        "samples_ts": [
+          66.3878,
+          66.2004,
+          66.5711
+        ]
+      }
+    ]
+  },
+  "combined_base.en": {
+    "asr_model": "base.en",
+    "rounds": 3,
+    "memory": {
+      "llm": {
+        "peak_footprint_bytes": 219039376,
+        "max_rss_bytes": 1372749824
+      },
+      "asr": {
+        "peak_footprint_bytes": 285180816,
+        "max_rss_bytes": 320290816
+      },
+      "python_vad_tts": {
+        "peak_footprint_bytes": 234177400,
+        "max_rss_bytes": 242515968
+      }
+    },
+    "sum_max_rss_bytes": 1935556608,
+    "sum_peak_footprint_bytes": 738397592,
+    "budget_bytes": 2684354560,
+    "fits_budget": true,
+    "system": {
+      "min_available_bytes": 1193771008,
+      "swap_used_delta_bytes": 0
+    },
+    "log": [
+      {
+        "round": 0,
+        "clip": "jfk.wav",
+        "vad_ms": 42.37691700018331,
+        "asr_ms": 192.7409579993764,
+        "llm_ttft_ms": 110.79320899989398,
+        "tts_first_chunk_ms": 116.66679199970531
+      },
+      {
+        "round": 0,
+        "clip": "caller_short.wav",
+        "vad_ms": 4.460375000235217,
+        "asr_ms": 112.20316599974467,
+        "llm_ttft_ms": 98.40054100004636,
+        "tts_first_chunk_ms": 37.353417000304034
+      },
+      {
+        "round": 0,
+        "clip": "caller_medium.wav",
+        "vad_ms": 14.052458000151091,
+        "asr_ms": 145.3971669998282,
+        "llm_ttft_ms": 100.24520800016035,
+        "tts_first_chunk_ms": 44.75954200006527
+      },
+      {
+        "round": 0,
+        "clip": "caller_long.wav",
+        "vad_ms": 27.56649999992078,
+        "asr_ms": 235.29454200070177,
+        "llm_ttft_ms": 143.84024999981193,
+        "tts_first_chunk_ms": 46.304249999593594
+      },
+      {
+        "round": 1,
+        "clip": "jfk.wav",
+        "vad_ms": 36.73262499978591,
+        "asr_ms": 165.20095799933188,
+        "llm_ttft_ms": 99.10004199991818,
+        "tts_first_chunk_ms": 52.9013750001468
+      },
+      {
+        "round": 1,
+        "clip": "caller_short.wav",
+        "vad_ms": 4.42758299959678,
+        "asr_ms": 112.40079199978936,
+        "llm_ttft_ms": 98.21683400059555,
+        "tts_first_chunk_ms": 33.57120800046687
+      },
+      {
+        "round": 1,
+        "clip": "caller_medium.wav",
+        "vad_ms": 13.777000000118278,
+        "asr_ms": 145.12283299973205,
+        "llm_ttft_ms": 96.78745800010802,
+        "tts_first_chunk_ms": 43.53537499991944
+      },
+      {
+        "round": 1,
+        "clip": "caller_long.wav",
+        "vad_ms": 25.943833000383165,
+        "asr_ms": 212.61025000057998,
+        "llm_ttft_ms": 141.19416599987744,
+        "tts_first_chunk_ms": 45.55254100068851
+      },
+      {
+        "round": 2,
+        "clip": "jfk.wav",
+        "vad_ms": 36.408625000149186,
+        "asr_ms": 162.12970800006588,
+        "llm_ttft_ms": 98.62291600074968,
+        "tts_first_chunk_ms": 51.17525000059686
+      },
+      {
+        "round": 2,
+        "clip": "caller_short.wav",
+        "vad_ms": 4.451499999959196,
+        "asr_ms": 111.80533400056447,
+        "llm_ttft_ms": 97.70791700066184,
+        "tts_first_chunk_ms": 38.68125000008149
+      },
+      {
+        "round": 2,
+        "clip": "caller_medium.wav",
+        "vad_ms": 14.443332999690028,
+        "asr_ms": 146.02395900055853,
+        "llm_ttft_ms": 97.43820800031244,
+        "tts_first_chunk_ms": 46.946458000093116
+      },
+      {
+        "round": 2,
+        "clip": "caller_long.wav",
+        "vad_ms": 27.274916999886045,
+        "asr_ms": 212.33520799978578,
+        "llm_ttft_ms": 140.92225000058534,
+        "tts_first_chunk_ms": 42.88174999965122
+      }
+    ]
+  },
+  "combined_small.en": {
+    "asr_model": "small.en",
+    "rounds": 3,
+    "memory": {
+      "llm": {
+        "peak_footprint_bytes": 220956304,
+        "max_rss_bytes": 1372209152
+      },
+      "asr": {
+        "peak_footprint_bytes": 722601208,
+        "max_rss_bytes": 702922752
+      },
+      "python_vad_tts": {
+        "peak_footprint_bytes": 275694504,
+        "max_rss_bytes": 260898816
+      }
+    },
+    "sum_max_rss_bytes": 2336030720,
+    "sum_peak_footprint_bytes": 1219252016,
+    "budget_bytes": 2684354560,
+    "fits_budget": true,
+    "system": {
+      "min_available_bytes": 971472896,
+      "swap_used_delta_bytes": 0
+    },
+    "log": [
+      {
+        "round": 0,
+        "clip": "jfk.wav",
+        "vad_ms": 36.305582999375474,
+        "asr_ms": 485.0784170002953,
+        "llm_ttft_ms": 113.06308299936063,
+        "tts_first_chunk_ms": 103.37887500008947
+      },
+      {
+        "round": 0,
+        "clip": "caller_short.wav",
+        "vad_ms": 5.077292000351008,
+        "asr_ms": 321.48920799954794,
+        "llm_ttft_ms": 100.71462500036432,
+        "tts_first_chunk_ms": 34.61112500008312
+      },
+      {
+        "round": 0,
+        "clip": "caller_medium.wav",
+        "vad_ms": 14.162459000544914,
+        "asr_ms": 372.7570419996482,
+        "llm_ttft_ms": 98.56166700046742,
+        "tts_first_chunk_ms": 39.156791999630514
+      },
+      {
+        "round": 0,
+        "clip": "caller_long.wav",
+        "vad_ms": 26.987375000317115,
+        "asr_ms": 527.0211669994751,
+        "llm_ttft_ms": 143.4861660000024,
+        "tts_first_chunk_ms": 48.57979099961085
+      },
+      {
+        "round": 1,
+        "clip": "jfk.wav",
+        "vad_ms": 36.895541999911075,
+        "asr_ms": 450.1282089995584,
+        "llm_ttft_ms": 97.64087500025198,
+        "tts_first_chunk_ms": 56.4810830001079
+      },
+      {
+        "round": 1,
+        "clip": "caller_short.wav",
+        "vad_ms": 4.36645799982216,
+        "asr_ms": 322.89058300011675,
+        "llm_ttft_ms": 97.34391599977243,
+        "tts_first_chunk_ms": 32.85074999985227
+      },
+      {
+        "round": 1,
+        "clip": "caller_medium.wav",
+        "vad_ms": 15.12045900017256,
+        "asr_ms": 382.5330829995437,
+        "llm_ttft_ms": 97.65254200010531,
+        "tts_first_chunk_ms": 40.613959000438626
+      },
+      {
+        "round": 1,
+        "clip": "caller_long.wav",
+        "vad_ms": 27.446000000054482,
+        "asr_ms": 536.0152499997639,
+        "llm_ttft_ms": 141.62445799956913,
+        "tts_first_chunk_ms": 57.17241599995759
+      },
+      {
+        "round": 2,
+        "clip": "jfk.wav",
+        "vad_ms": 39.779416000783385,
+        "asr_ms": 453.6088340000788,
+        "llm_ttft_ms": 98.7502920006591,
+        "tts_first_chunk_ms": 57.12258300081885
+      },
+      {
+        "round": 2,
+        "clip": "caller_short.wav",
+        "vad_ms": 4.674209000768315,
+        "asr_ms": 321.1793749997014,
+        "llm_ttft_ms": 97.4701670002105,
+        "tts_first_chunk_ms": 46.70370800067758
+      },
+      {
+        "round": 2,
+        "clip": "caller_medium.wav",
+        "vad_ms": 14.995749999798136,
+        "asr_ms": 378.48979199952737,
+        "llm_ttft_ms": 97.64279199953307,
+        "tts_first_chunk_ms": 39.40874999989319
+      },
+      {
+        "round": 2,
+        "clip": "caller_long.wav",
+        "vad_ms": 29.192709000199102,
+        "asr_ms": 530.8383749998029,
+        "llm_ttft_ms": 141.46658400022716,
+        "tts_first_chunk_ms": 45.39950000071258
+      }
+    ]
+  }
+}

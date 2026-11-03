@@ -1,0 +1,9 @@
+.venv/
+models/
+third_party/
+__pycache__/
+.pytest_cache/
+*.part
+benchmarks/*/logs/
+node_modules/
+.DS_Store
