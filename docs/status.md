@@ -3,7 +3,7 @@
 ## Phase 0: Environment and feasibility (2026-11-03)
 
 All numbers below come from `benchmarks/phase0/summary.md`, which is generated from
-`benchmarks/phase0/results/phase0-20261103T092517Z.json` (commit `a4e7251`, clean tree). An earlier run before the first commit, `phase0-20261103T091808Z.json`, gave numbers within about 10% of these`.
+`benchmarks/phase0/results/phase0-20261103T092517Z.json` (commit `a4e7251`, clean tree). An earlier run before the first commit, `phase0-20261103T091808Z.json`, gave numbers within about 10% of these.
 
 ### Verified
 - **Environment**: Apple M2, 8 GB, macOS 26.6.2, Homebrew 7.0.8, Node v26.10, git 2.56, FFmpeg 9.0.2 and CMake 4.4.5 (both installed in this phase), project venv on Python 3.11.17 (ADR 0001).

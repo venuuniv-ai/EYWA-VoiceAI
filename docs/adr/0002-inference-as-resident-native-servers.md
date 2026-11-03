@@ -13,7 +13,7 @@ The FastAPI backend supervises two child processes, `llama-server` and `whisper-
 - Spawning `whisper-cli` for each utterance: it reloads the model every time (measured ready time: 358 ms for base.en), and the first run on Metal can take seconds.
 
 ## Tradeoffs
-- Each request pays localhost HTTP overhead. That overhead is included in the measured ASR latency (p50 161 ms for base.en, upload included).
+- Each request pays localhost HTTP overhead. That overhead is included in the measured ASR latency (p50 176 ms for base.en, upload included; benchmark run at commit a4e7251).
 - Process isolation also makes per-component memory measurement simple (`/usr/bin/time -l`).
 - Two extra processes have to be supervised: health checks, restart, and shutdown.
 - Cancelling via a closed stream still has to be checked with a test in Phase 1.
