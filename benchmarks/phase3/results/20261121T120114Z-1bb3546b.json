@@ -1,0 +1,299 @@
+{
+  "id": "20261121T120114Z-1bb3546b",
+  "status": "completed",
+  "mode": "REAL \u2014 compact: qwen2.5-0.5b-instruct-q4_k_m; whisper.cpp / llama.cpp / Silero / Piper",
+  "metadata": {
+    "date_utc": "2026-11-21T12:01:14+00:00",
+    "git_commit": "267649c2773ad25ae617231277b4b628e25a3976",
+    "git_dirty": true,
+    "hardware": {
+      "chip": "Apple M2",
+      "ram_bytes": 8589934592,
+      "cpu_count": 8
+    },
+    "os": "macOS 26.6.2",
+    "python": "3.11.17",
+    "packages": {
+      "onnxruntime": "1.31.1",
+      "piper-tts": "1.8.0",
+      "numpy": "2.4.6"
+    },
+    "native": {
+      "whisper.cpp": "v1.9.5",
+      "llama.cpp": "b12066"
+    },
+    "models": [
+      {
+        "dest": "llm/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+        "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+      },
+      {
+        "dest": "llm/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+      },
+      {
+        "dest": "asr/ggml-base.en.bin",
+        "sha256": "a03779c86df3323075f5e796cb2ce5029f00ec8869eee3fdfb897afe36c6d002"
+      },
+      {
+        "dest": "asr/ggml-small.en.bin",
+        "sha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx",
+        "sha256": "10bb85e071d616fcf4071f369f1799d0491492ab3c5d552ec19fb548fac13195"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx.json",
+        "sha256": "b471dc60d2d8335e819c393d196d6fbf792817f40051257b269878505bc9afb3"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.MODEL_CARD",
+        "sha256": "0ccde6927e5bb4d743f4ea39618a9387ba18cca3351220a8a9cfdbc68b30fcb9"
+      },
+      {
+        "dest": "vad/silero_vad.onnx",
+        "sha256": "1a153a22f4509e292a94e67d6f9b85e8deb25b4988682b7e174c65279d8788e3"
+      }
+    ],
+    "settings": {
+      "llm_ctx": 4096,
+      "llm_parallel_slots": 1,
+      "llm_gpu_layers": "all (99)",
+      "threads": 4,
+      "temperature": 0,
+      "asr_backend": "whisper-server, Metal",
+      "vad_frame_samples": 512,
+      "tts_agent_speaker": 0,
+      "tts_caller_speaker": 20
+    },
+    "system_memory_at_start": {
+      "available_bytes": 1667596288
+    }
+  },
+  "source_sha256": "1073a37e2a219d89b6b8336262599ae8056bd4e8dd656313aa66f2fe10b4ba6a",
+  "seed": 42,
+  "reference_date": "2026-11-21",
+  "clinic_asr_hint": "Doctor Lee and Doctor Rao, Willowmere Demo Clinic.",
+  "suite_sha256": "1ebb1b8ee65da63b2e20e0e3898c90478edd0bc59a5a52bb8863c4a68a3ef981",
+  "suite_version": 1,
+  "caller_speaker": 20,
+  "agent_speaker": 0,
+  "transport": "production VoiceSession in-process client; real-time PCM; no browser or physical devices",
+  "scoring": "SQLite state, rendered spoken success claims, known-script WER; no LLM judge",
+  "scenarios": [
+    {
+      "id": "phone_noise",
+      "task_success": true,
+      "error_class": null,
+      "false_confirmations": 0,
+      "success_claims": 1,
+      "duplicate_writes": 0,
+      "asr_wer": 0.2222222222222222,
+      "voice_to_voice_ms": [
+        1818.2142909999857,
+        676.3247080000201
+      ],
+      "barge_in": [],
+      "barge_in_success": null,
+      "phone": true,
+      "state": [
+        {
+          "id": "39a56715d84e4c1993b2ff65394c9f1b",
+          "date": "2026-11-27",
+          "time": "15:00",
+          "clinician": "Lee",
+          "status": "confirmed"
+        }
+      ],
+      "foreign_unchanged": true,
+      "expected": {
+        "active": 1,
+        "day": "friday",
+        "time": "15:00",
+        "clinician": "Lee"
+      },
+      "perturbations": {
+        "speed": 1.0,
+        "snr_db": 25,
+        "seed": 51
+      },
+      "trace": [
+        {
+          "role": "caller",
+          "text": "Book Friday at 3 p.m. with Doctor Lee."
+        },
+        {
+          "role": "agent",
+          "text": "Book your appointment on Friday, November 27 at 3 PM with Doctor Lee, at the fictional Willowmere Demo Clinic, is that right?"
+        },
+        {
+          "role": "caller",
+          "text": "Yes."
+        },
+        {
+          "role": "agent",
+          "text": "Your appointment is confirmed. The local booking database has verified the change."
+        }
+      ],
+      "stage_metrics": [
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 2.464,
+          "speech_end_frame": 62,
+          "asr_ms": 561.2310409999282,
+          "asr_rtf": 0.22777233806815267,
+          "tools_ms": 522.4972080000043,
+          "tts_first_chunk_ms": 253.35287500001868,
+          "server_voice_to_voice_ms": 1818.2142909999857
+        },
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 0.928,
+          "speech_end_frame": 97,
+          "asr_ms": 139.28325000006225,
+          "asr_rtf": 0.15008970905179123,
+          "tools_ms": 1.7715000001317094,
+          "tts_first_chunk_ms": 54.919667000149275,
+          "server_voice_to_voice_ms": 676.3247080000201
+        }
+      ],
+      "replay": "phone_noise.wav",
+      "synthetic_audio_only": true,
+      "replay_content": "concatenated synthetic caller and agent turns; latency is recorded separately"
+    },
+    {
+      "id": "change_time",
+      "task_success": true,
+      "error_class": null,
+      "false_confirmations": 0,
+      "success_claims": 1,
+      "duplicate_writes": 0,
+      "asr_wer": 0.2777777777777778,
+      "voice_to_voice_ms": [
+        1270.5122500001198,
+        1331.3002080001115,
+        687.4692920000416
+      ],
+      "barge_in": [],
+      "barge_in_success": null,
+      "phone": false,
+      "state": [
+        {
+          "id": "2b6afb6d51e84f8290fbf32c84c5b696",
+          "date": "2026-11-24",
+          "time": "14:00",
+          "clinician": "Rao",
+          "status": "confirmed"
+        }
+      ],
+      "foreign_unchanged": true,
+      "expected": {
+        "active": 1,
+        "day": "tuesday",
+        "time": "14:00",
+        "clinician": "Rao"
+      },
+      "perturbations": {
+        "speed": 1.0,
+        "snr_db": null,
+        "seed": 57
+      },
+      "trace": [
+        {
+          "role": "caller",
+          "text": "Book Tuesday at 10am with Doctor Rao."
+        },
+        {
+          "role": "agent",
+          "text": "Book your appointment on Tuesday, November 24 at 10 AM with Doctor Rao, at the fictional Willowmere Demo Clinic, is that right?"
+        },
+        {
+          "role": "caller",
+          "text": "Actually booked Tuesday at 2 p.m. with Doctor Rao."
+        },
+        {
+          "role": "agent",
+          "text": "Book your appointment on Tuesday, November 24 at 2 PM with Doctor Rao, at the fictional Willowmere Demo Clinic, is that right?"
+        },
+        {
+          "role": "caller",
+          "text": "Yes."
+        },
+        {
+          "role": "agent",
+          "text": "Your appointment is confirmed. The local booking database has verified the change."
+        }
+      ],
+      "stage_metrics": [
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 2.368,
+          "speech_end_frame": 59,
+          "asr_ms": 160.49945800000387,
+          "asr_rtf": 0.06777848733108272,
+          "tools_ms": 470.11150000003,
+          "tts_first_chunk_ms": 159.33537500018247,
+          "server_voice_to_voice_ms": 1270.5122500001198
+        },
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 3.136,
+          "speech_end_frame": 161,
+          "asr_ms": 212.03266700013046,
+          "asr_rtf": 0.06761245758932731,
+          "tools_ms": 481.92104200006725,
+          "tts_first_chunk_ms": 155.77087500014386,
+          "server_voice_to_voice_ms": 1331.3002080001115
+        },
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 1.056,
+          "speech_end_frame": 198,
+          "asr_ms": 145.73179199987862,
+          "asr_rtf": 0.13800359090897596,
+          "tools_ms": 3.8197500000478612,
+          "tts_first_chunk_ms": 55.89729200005422,
+          "server_voice_to_voice_ms": 687.4692920000416
+        }
+      ],
+      "replay": "change_time.wav",
+      "synthetic_audio_only": true,
+      "replay_content": "concatenated synthetic caller and agent turns; latency is recorded separately"
+    }
+  ],
+  "summary": {
+    "scenario_count": 2,
+    "task_success_rate": 1.0,
+    "false_confirmation_rate": 0.0,
+    "duplicate_write_rate": 0.0,
+    "asr_wer": 0.25,
+    "phone_asr_wer": 0.2222222222222222,
+    "voice_to_voice_ms": {
+      "n": 5,
+      "p50": 1270.5122500001198,
+      "p95": 1720.8314744000108
+    },
+    "barge_in_success_rate": null,
+    "barge_in_stop_ms": {
+      "n": 0,
+      "p50": null,
+      "p95": null
+    }
+  },
+  "memory": {
+    "method": "native/Piper time -l maxima + runner RUSAGE_SELF; replaced Piper workers do not overlap",
+    "process_max_rss_bytes": {
+      "piper": 248119296,
+      "llama-server": 673677312,
+      "whisper-server": 318177280,
+      "runner": 93782016
+    },
+    "sum_max_rss_bytes": 1333755904,
+    "raw_time_output": {
+      "piper-1": "       15.04 real         5.53 user         0.19 sys\n           248119296  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               26148  page reclaims\n                 292  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                 497  voluntary context switches\n               10232  involuntary context switches\n         70379396527  instructions retired\n         17488316865  cycles elapsed\n           257917792  peak memory footprint\n",
+      "llama-server": "       16.54 real         2.68 user         0.26 sys\n           673677312  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               20267  page reclaims\n               31947  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                  11  messages sent\n                  12  messages received\n                   1  signals received\n                 116  voluntary context switches\n               13398  involuntary context switches\n         51993311572  instructions retired\n          8911693051  cycles elapsed\n           168805576  peak memory footprint\n",
+      "whisper-server": "       15.57 real         0.23 user         0.25 sys\n           318177280  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               23477  page reclaims\n                1993  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                  12  messages sent\n                  97  messages received\n                   1  signals received\n                  32  voluntary context switches\n               10503  involuntary context switches\n          2450956249  instructions retired\n          1206384928  cycles elapsed\n           312722440  peak memory footprint\n"
+    }
+  }
+}

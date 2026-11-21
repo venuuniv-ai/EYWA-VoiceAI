@@ -1,0 +1,5472 @@
+{
+  "metadata": {
+    "date_utc": "2026-11-19T08:53:06+00:00",
+    "git_commit": "267649c2773ad25ae617231277b4b628e25a3976",
+    "git_dirty": true,
+    "hardware": {
+      "chip": "Apple M2",
+      "ram_bytes": 8589934592,
+      "cpu_count": 8
+    },
+    "os": "macOS 26.6.2",
+    "python": "3.11.17",
+    "packages": {
+      "onnxruntime": "1.31.1",
+      "piper-tts": "1.8.0",
+      "numpy": "2.4.6"
+    },
+    "native": {
+      "whisper.cpp": "v1.9.5",
+      "llama.cpp": "b12066"
+    },
+    "models": [
+      {
+        "dest": "llm/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+      },
+      {
+        "dest": "asr/ggml-base.en.bin",
+        "sha256": "a03779c86df3323075f5e796cb2ce5029f00ec8869eee3fdfb897afe36c6d002"
+      },
+      {
+        "dest": "asr/ggml-small.en.bin",
+        "sha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx",
+        "sha256": "10bb85e071d616fcf4071f369f1799d0491492ab3c5d552ec19fb548fac13195"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx.json",
+        "sha256": "b471dc60d2d8335e819c393d196d6fbf792817f40051257b269878505bc9afb3"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.MODEL_CARD",
+        "sha256": "0ccde6927e5bb4d743f4ea39618a9387ba18cca3351220a8a9cfdbc68b30fcb9"
+      },
+      {
+        "dest": "vad/silero_vad.onnx",
+        "sha256": "1a153a22f4509e292a94e67d6f9b85e8deb25b4988682b7e174c65279d8788e3"
+      }
+    ],
+    "settings": {
+      "llm_ctx": 4096,
+      "llm_parallel_slots": 1,
+      "llm_gpu_layers": "all (99)",
+      "threads": 4,
+      "temperature": 0,
+      "asr_backend": "whisper-server, Metal",
+      "vad_frame_samples": 512,
+      "tts_agent_speaker": 0,
+      "tts_caller_speaker": 20
+    },
+    "system_memory_at_start": {
+      "available_bytes": 2283028480
+    }
+  },
+  "source_sha256": "26dfc324b411419d37c0b7aaac5a825f775eaf6fa4cd8d355a60bed3d1b0c930",
+  "mode": "REAL",
+  "measurement": "PCM paced at 32 ms/frame; last Silero speech frame sent to first audio received",
+  "settings": {
+    "rounds": 1,
+    "warmup_turns": 1,
+    "silence_ms": 480,
+    "onset_ms": 96,
+    "min_speech_ms": 160,
+    "max_turn_ms": 15000,
+    "max_tokens": 96,
+    "cache_prompt": true,
+    "playback": "immediate transport consumer"
+  },
+  "runs": [
+    {
+      "fixture": "caller_short",
+      "fixture_sha256": "88caa193ab7404cf80fa067b81ab187f6a604ca3efa0f165524be669d91dff58",
+      "vad_endpoint_ms": 480,
+      "asr_audio_s": 1.76,
+      "asr_ms": 151.18312500001707,
+      "asr_rtf": 0.0858995028409188,
+      "llm_ttft_ms": 29.564708000009432,
+      "tts_first_chunk_ms": 51.03162500000735,
+      "server_voice_to_voice_ms": 817.2654169999976,
+      "llm_ms": 432.33941700000855,
+      "llm_content_events": 25,
+      "llm_tokens_per_second": 62.218306616792475,
+      "llm_generated_tokens": 26,
+      "transport_voice_to_voice_ms": 807.4624999999855,
+      "round": 0
+    },
+    {
+      "fixture": "caller_medium",
+      "fixture_sha256": "a386c57e5d4de37491f0c3fcd6170d0ac207a431b0689194de5e07e36676e399",
+      "vad_endpoint_ms": 480,
+      "asr_audio_s": 4.544,
+      "asr_ms": 225.19862499999022,
+      "asr_rtf": 0.04955955655809644,
+      "llm_ttft_ms": 100.01904199998535,
+      "tts_first_chunk_ms": 49.04204200002482,
+      "server_voice_to_voice_ms": 888.8005419999945,
+      "llm_ms": 321.5750420000063,
+      "llm_content_events": 14,
+      "llm_tokens_per_second": 63.646199867252214,
+      "llm_generated_tokens": 15,
+      "transport_voice_to_voice_ms": 892.312000000004,
+      "round": 0
+    },
+    {
+      "fixture": "caller_long",
+      "fixture_sha256": "0bc6637f02b5cbd6d02c2b3780f88cf49597aa6b3bca1e1ee8b0180a70c671dd",
+      "vad_endpoint_ms": 480,
+      "asr_audio_s": 8.448,
+      "asr_ms": 288.63358399999584,
+      "asr_rtf": 0.0341659071969692,
+      "llm_ttft_ms": 137.8201249999904,
+      "tts_first_chunk_ms": 58.92745899998886,
+      "server_voice_to_voice_ms": 1090.9127089999902,
+      "llm_ms": 674.901707999993,
+      "llm_content_events": 34,
+      "llm_tokens_per_second": 63.449763649630405,
+      "llm_generated_tokens": 35,
+      "transport_voice_to_voice_ms": 1094.9231250000082,
+      "round": 0
+    }
+  ],
+  "admission": {
+    "admitted": true,
+    "available_bytes": 2283028480,
+    "required_bytes": 1376780288,
+    "headroom_bytes": 536870912,
+    "reason": "admitted: loading 'first model: Qwen' needs 1313 MB; 2177 MB available; must keep 512 MB free afterwards",
+    "policy": "sequential per-model checks, 512 MB reserve before every load",
+    "isolated_group_rss_sum_bytes": 2027945984
+  },
+  "warmup": {
+    "fixture": "caller_short",
+    "fixture_sha256": "88caa193ab7404cf80fa067b81ab187f6a604ca3efa0f165524be669d91dff58",
+    "vad_endpoint_ms": 480,
+    "asr_audio_s": 1.76,
+    "asr_ms": 174.06449999998586,
+    "asr_rtf": 0.09890028409090106,
+    "llm_ttft_ms": 187.69379099998673,
+    "tts_first_chunk_ms": 130.13666700001636,
+    "server_voice_to_voice_ms": 1081.5738749999855,
+    "llm_ms": 573.6747079999986,
+    "llm_content_events": 25,
+    "llm_tokens_per_second": 64.89696957110891,
+    "llm_generated_tokens": 26,
+    "transport_voice_to_voice_ms": 1084.3616249999855
+  },
+  "status": "completed_transport_benchmark",
+  "summary": {
+    "transport_voice_to_voice_ms": {
+      "n": 3,
+      "p50": 892.312000000004,
+      "p95": 1074.6620125000077,
+      "min": 807.4624999999855,
+      "max": 1094.9231250000082,
+      "mean": 931.5658749999993
+    },
+    "server_voice_to_voice_ms": {
+      "n": 3,
+      "p50": 888.8005419999945,
+      "p95": 1070.7014922999906,
+      "min": 817.2654169999976,
+      "max": 1090.9127089999902,
+      "mean": 932.3262226666608
+    },
+    "vad_endpoint_ms": {
+      "n": 3,
+      "p50": 480.0,
+      "p95": 480.0,
+      "min": 480.0,
+      "max": 480.0,
+      "mean": 480.0
+    },
+    "asr_ms": {
+      "n": 3,
+      "p50": 225.19862499999022,
+      "p95": 282.2900880999953,
+      "min": 151.18312500001707,
+      "max": 288.63358399999584,
+      "mean": 221.67177800000104
+    },
+    "asr_rtf": {
+      "n": 3,
+      "p50": 0.04955955655809644,
+      "p95": 0.08226550821263656,
+      "min": 0.0341659071969692,
+      "max": 0.0858995028409188,
+      "mean": 0.056541655531994806
+    },
+    "llm_ttft_ms": {
+      "n": 3,
+      "p50": 100.01904199998535,
+      "p95": 134.0400166999899,
+      "min": 29.564708000009432,
+      "max": 137.8201249999904,
+      "mean": 89.13462499999507
+    },
+    "llm_tokens_per_second": {
+      "n": 3,
+      "p50": 63.449763649630405,
+      "p95": 63.626556245490036,
+      "min": 62.218306616792475,
+      "max": 63.646199867252214,
+      "mean": 63.10475671122503
+    },
+    "tts_first_chunk_ms": {
+      "n": 3,
+      "p50": 51.03162500000735,
+      "p95": 58.13787559999071,
+      "min": 49.04204200002482,
+      "max": 58.92745899998886,
+      "mean": 53.000375333340344
+    }
+  },
+  "memory": {
+    "method": "100 ms psutil sampling; sampled peak, not exact peak RSS",
+    "sampled_group_peak_rss_bytes": 1797062656,
+    "samples": [
+      {
+        "at_monotonic_s": 205.4087435,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 22986752
+          }
+        ],
+        "available_bytes": 2283028480
+      },
+      {
+        "at_monotonic_s": 205.513780583,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 35340288
+          }
+        ],
+        "available_bytes": 2283028480
+      },
+      {
+        "at_monotonic_s": 205.618732291,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 48676864
+          }
+        ],
+        "available_bytes": 2283028480
+      },
+      {
+        "at_monotonic_s": 205.723201416,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82673664
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 638976
+          }
+        ],
+        "available_bytes": 2283028480
+      },
+      {
+        "at_monotonic_s": 205.82852625,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82673664
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 51036160
+          }
+        ],
+        "available_bytes": 2283028480
+      },
+      {
+        "at_monotonic_s": 205.933836875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82690048
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 96485376
+          }
+        ],
+        "available_bytes": 2283028480
+      },
+      {
+        "at_monotonic_s": 206.0389275,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82722816
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 130957312
+          }
+        ],
+        "available_bytes": 2283028480
+      },
+      {
+        "at_monotonic_s": 206.143685875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82722816
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 196689920
+          }
+        ],
+        "available_bytes": 2283028480
+      },
+      {
+        "at_monotonic_s": 206.247904041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82739200
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 312180736
+          }
+        ],
+        "available_bytes": 2258354176
+      },
+      {
+        "at_monotonic_s": 206.352353333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82771968
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 421904384
+          }
+        ],
+        "available_bytes": 2237284352
+      },
+      {
+        "at_monotonic_s": 206.457488916,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82788352
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 535347200
+          }
+        ],
+        "available_bytes": 2237284352
+      },
+      {
+        "at_monotonic_s": 206.56253025,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82788352
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 653017088
+          }
+        ],
+        "available_bytes": 2237284352
+      },
+      {
+        "at_monotonic_s": 206.66770575,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82788352
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 771719168
+          }
+        ],
+        "available_bytes": 2237284352
+      },
+      {
+        "at_monotonic_s": 206.772896791,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 82788352
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 892502016
+          }
+        ],
+        "available_bytes": 2237284352
+      },
+      {
+        "at_monotonic_s": 206.877919833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 41074688
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 939884544
+          }
+        ],
+        "available_bytes": 2237284352
+      },
+      {
+        "at_monotonic_s": 206.983171333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 41091072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1056980992
+          }
+        ],
+        "available_bytes": 2237284352
+      },
+      {
+        "at_monotonic_s": 207.087326041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 41091072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1174781952
+          }
+        ],
+        "available_bytes": 2237284352
+      },
+      {
+        "at_monotonic_s": 207.192578833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 41091072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1298628608
+          }
+        ],
+        "available_bytes": 2237284352
+      },
+      {
+        "at_monotonic_s": 207.297989875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 43581440
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1300217856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 10420224
+          }
+        ],
+        "available_bytes": 1394638848
+      },
+      {
+        "at_monotonic_s": 207.403218666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 43565056
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1299333120
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 63225856
+          }
+        ],
+        "available_bytes": 1367605248
+      },
+      {
+        "at_monotonic_s": 207.508436125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 43565056
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1298513920
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 147324928
+          }
+        ],
+        "available_bytes": 1196343296
+      },
+      {
+        "at_monotonic_s": 207.614521708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 40468480
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294073856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 295600128
+          }
+        ],
+        "available_bytes": 1028423680
+      },
+      {
+        "at_monotonic_s": 207.720541791,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 70975488
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294073856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 287834112
+          }
+        ],
+        "available_bytes": 1034928128
+      },
+      {
+        "at_monotonic_s": 207.825870666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 72417280
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294073856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 287834112
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 25264128
+          }
+        ],
+        "available_bytes": 1034928128
+      },
+      {
+        "at_monotonic_s": 207.931079666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63619072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294073856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 279625728
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 141033472
+          }
+        ],
+        "available_bytes": 1034928128
+      },
+      {
+        "at_monotonic_s": 208.036180125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63619072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294073856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 279625728
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 159039488
+          }
+        ],
+        "available_bytes": 1034928128
+      },
+      {
+        "at_monotonic_s": 208.140553083,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63619072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294073856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 279625728
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 159678464
+          }
+        ],
+        "available_bytes": 1034928128
+      },
+      {
+        "at_monotonic_s": 208.245513666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63619072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294073856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 279625728
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 159678464
+          }
+        ],
+        "available_bytes": 1034928128
+      },
+      {
+        "at_monotonic_s": 208.349340958,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63619072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294139392
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 279625728
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 159678464
+          }
+        ],
+        "available_bytes": 1035976704
+      },
+      {
+        "at_monotonic_s": 208.453837666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63619072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291583488
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 279625728
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 159678464
+          }
+        ],
+        "available_bytes": 1081376768
+      },
+      {
+        "at_monotonic_s": 208.558669083,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63619072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291583488
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 279658496
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 159186944
+          }
+        ],
+        "available_bytes": 1091518464
+      },
+      {
+        "at_monotonic_s": 208.663566166,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63635456
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291583488
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 159186944
+          }
+        ],
+        "available_bytes": 1161494528
+      },
+      {
+        "at_monotonic_s": 208.768362666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 67584000
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291583488
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1154859008
+      },
+      {
+        "at_monotonic_s": 208.875286375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74465280
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291583488
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1142439936
+      },
+      {
+        "at_monotonic_s": 208.981558125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74465280
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291583488
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1137262592
+      },
+      {
+        "at_monotonic_s": 209.09085325,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74498048
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291583488
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1131757568
+      },
+      {
+        "at_monotonic_s": 209.203804458,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74743808
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291583488
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1139916800
+      },
+      {
+        "at_monotonic_s": 209.314958666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74743808
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291616256
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1141522432
+      },
+      {
+        "at_monotonic_s": 209.426788291,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74743808
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291616256
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1118519296
+      },
+      {
+        "at_monotonic_s": 209.538329958,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74760192
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291616256
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1125646336
+      },
+      {
+        "at_monotonic_s": 209.649642041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74760192
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291616256
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1133985792
+      },
+      {
+        "at_monotonic_s": 209.761556208,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74760192
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291616256
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230899712
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1128202240
+      },
+      {
+        "at_monotonic_s": 209.870775458,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74776576
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291616256
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 230850560
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160169984
+          }
+        ],
+        "available_bytes": 1134575616
+      },
+      {
+        "at_monotonic_s": 209.977811375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74596352
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291501568
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229654528
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 151633920
+          }
+        ],
+        "available_bytes": 1134575616
+      },
+      {
+        "at_monotonic_s": 210.087755833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74596352
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291501568
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229654528
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 151240704
+          }
+        ],
+        "available_bytes": 1134575616
+      },
+      {
+        "at_monotonic_s": 210.199590125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74596352
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291501568
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229654528
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 151240704
+          }
+        ],
+        "available_bytes": 1134575616
+      },
+      {
+        "at_monotonic_s": 210.311353958,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74629120
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291501568
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229654528
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 151240704
+          }
+        ],
+        "available_bytes": 1134575616
+      },
+      {
+        "at_monotonic_s": 210.424586625,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 74629120
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291501568
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229654528
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 151158784
+          }
+        ],
+        "available_bytes": 1134575616
+      },
+      {
+        "at_monotonic_s": 210.534321958,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 75350016
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291501568
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 237912064
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 144097280
+          }
+        ],
+        "available_bytes": 1072906240
+      },
+      {
+        "at_monotonic_s": 210.645792041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 75350016
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1291436032
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 240844800
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 140115968
+          }
+        ],
+        "available_bytes": 1050624000
+      },
+      {
+        "at_monotonic_s": 210.75212775,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 72499200
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294008320
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 239616000
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 133562368
+          }
+        ],
+        "available_bytes": 1009074176
+      },
+      {
+        "at_monotonic_s": 210.859185916,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 72499200
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294008320
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 239616000
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 133562368
+          }
+        ],
+        "available_bytes": 1009074176
+      },
+      {
+        "at_monotonic_s": 210.965538625,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 72679424
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1296760832
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 239616000
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 133562368
+          }
+        ],
+        "available_bytes": 1009074176
+      },
+      {
+        "at_monotonic_s": 211.071456333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 72826880
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1294516224
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 239616000
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 144408576
+          }
+        ],
+        "available_bytes": 1009074176
+      },
+      {
+        "at_monotonic_s": 211.176753708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69074944
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1280589824
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 239599616
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 166576128
+          }
+        ],
+        "available_bytes": 1009074176
+      },
+      {
+        "at_monotonic_s": 211.284455875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 68714496
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1277181952
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 239534080
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 166608896
+          }
+        ],
+        "available_bytes": 1009074176
+      },
+      {
+        "at_monotonic_s": 211.38950975,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69713920
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1257193472
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 237109248
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203079680
+          }
+        ],
+        "available_bytes": 1009074176
+      },
+      {
+        "at_monotonic_s": 211.498058875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69713920
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1257193472
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 237109248
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203079680
+          }
+        ],
+        "available_bytes": 1009074176
+      },
+      {
+        "at_monotonic_s": 211.610160125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69615616
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1257193472
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 237109248
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203079680
+          }
+        ],
+        "available_bytes": 1034534912
+      },
+      {
+        "at_monotonic_s": 211.722528958,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69615616
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1257193472
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236929024
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203079680
+          }
+        ],
+        "available_bytes": 1036222464
+      },
+      {
+        "at_monotonic_s": 211.828711333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69615616
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1257193472
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236929024
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203079680
+          }
+        ],
+        "available_bytes": 1037336576
+      },
+      {
+        "at_monotonic_s": 211.936810166,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69615616
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1254096896
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236929024
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203063296
+          }
+        ],
+        "available_bytes": 1037336576
+      },
+      {
+        "at_monotonic_s": 212.048663708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69632000
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1254096896
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236929024
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203063296
+          }
+        ],
+        "available_bytes": 1037336576
+      },
+      {
+        "at_monotonic_s": 212.159130833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69632000
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1254096896
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236929024
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203063296
+          }
+        ],
+        "available_bytes": 1037336576
+      },
+      {
+        "at_monotonic_s": 212.270102875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69632000
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1252737024
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236929024
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203063296
+          }
+        ],
+        "available_bytes": 1037336576
+      },
+      {
+        "at_monotonic_s": 212.382381875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69632000
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1251393536
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236929024
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203063296
+          }
+        ],
+        "available_bytes": 1037336576
+      },
+      {
+        "at_monotonic_s": 212.493400708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69648384
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1251393536
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236929024
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203063296
+          }
+        ],
+        "available_bytes": 1037336576
+      },
+      {
+        "at_monotonic_s": 212.605571458,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69648384
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1251393536
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236929024
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 203063296
+          }
+        ],
+        "available_bytes": 1037336576
+      },
+      {
+        "at_monotonic_s": 212.717156458,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69632000
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1247920128
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 235634688
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 198868992
+          }
+        ],
+        "available_bytes": 1138507776
+      },
+      {
+        "at_monotonic_s": 212.829438375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69648384
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1247920128
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 235634688
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 198868992
+          }
+        ],
+        "available_bytes": 1136574464
+      },
+      {
+        "at_monotonic_s": 212.965292375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69648384
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1236992000
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 235634688
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 198082560
+          }
+        ],
+        "available_bytes": 1172815872
+      },
+      {
+        "at_monotonic_s": 213.074781666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69648384
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1234452480
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 235634688
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 197230592
+          }
+        ],
+        "available_bytes": 1177649152
+      },
+      {
+        "at_monotonic_s": 213.185019375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69730304
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1234452480
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 241369088
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 197230592
+          }
+        ],
+        "available_bytes": 1127432192
+      },
+      {
+        "at_monotonic_s": 213.291208,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 70205440
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1215840256
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 242368512
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 192544768
+          }
+        ],
+        "available_bytes": 1068515328
+      },
+      {
+        "at_monotonic_s": 213.398463625,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 70025216
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1199276032
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 241664000
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 188366848
+          }
+        ],
+        "available_bytes": 1059586048
+      },
+      {
+        "at_monotonic_s": 213.503775333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 70172672
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1199259648
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 241664000
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 190038016
+          }
+        ],
+        "available_bytes": 1059635200
+      },
+      {
+        "at_monotonic_s": 213.610284875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 70172672
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1195311104
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 241516544
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 188055552
+          }
+        ],
+        "available_bytes": 1059635200
+      },
+      {
+        "at_monotonic_s": 213.7182745,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 70139904
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1191051264
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 235143168
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 195051520
+          }
+        ],
+        "available_bytes": 1060454400
+      },
+      {
+        "at_monotonic_s": 213.823928958,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 70369280
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1182613504
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232734720
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 200572928
+          }
+        ],
+        "available_bytes": 1069957120
+      },
+      {
+        "at_monotonic_s": 213.932900125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 70369280
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1177124864
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232357888
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 200572928
+          }
+        ],
+        "available_bytes": 1070809088
+      },
+      {
+        "at_monotonic_s": 214.043425625,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 70369280
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1177124864
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232357888
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 200572928
+          }
+        ],
+        "available_bytes": 1069973504
+      },
+      {
+        "at_monotonic_s": 214.150786333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66617344
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1169244160
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232013824
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 200572928
+          }
+        ],
+        "available_bytes": 1072070656
+      },
+      {
+        "at_monotonic_s": 214.259157583,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66617344
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1169244160
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232357888
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 200572928
+          }
+        ],
+        "available_bytes": 1068744704
+      },
+      {
+        "at_monotonic_s": 214.370667708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66617344
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1169244160
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232357888
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 200572928
+          }
+        ],
+        "available_bytes": 1068498944
+      },
+      {
+        "at_monotonic_s": 214.482067291,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66617344
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1166737408
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232357888
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199622656
+          }
+        ],
+        "available_bytes": 1121288192
+      },
+      {
+        "at_monotonic_s": 214.593832625,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66617344
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1160527872
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232357888
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199622656
+          }
+        ],
+        "available_bytes": 1121288192
+      },
+      {
+        "at_monotonic_s": 214.704805833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 71319552
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1156333568
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232357888
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199622656
+          }
+        ],
+        "available_bytes": 1121288192
+      },
+      {
+        "at_monotonic_s": 214.816703916,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 75530240
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1144684544
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232357888
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199557120
+          }
+        ],
+        "available_bytes": 1129250816
+      },
+      {
+        "at_monotonic_s": 214.930342791,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 68780032
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1128710144
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232357888
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199540736
+          }
+        ],
+        "available_bytes": 1192640512
+      },
+      {
+        "at_monotonic_s": 215.038442166,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 68861952
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1123663872
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232243200
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199540736
+          }
+        ],
+        "available_bytes": 1204125696
+      },
+      {
+        "at_monotonic_s": 215.150556333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 68943872
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1123663872
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232243200
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199540736
+          }
+        ],
+        "available_bytes": 1204125696
+      },
+      {
+        "at_monotonic_s": 215.261968875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69910528
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1123663872
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 231391232
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199540736
+          }
+        ],
+        "available_bytes": 1204125696
+      },
+      {
+        "at_monotonic_s": 215.380990333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69648384
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120976896
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 231391232
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199540736
+          }
+        ],
+        "available_bytes": 1204125696
+      },
+      {
+        "at_monotonic_s": 215.491830333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69730304
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120976896
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 231391232
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199524352
+          }
+        ],
+        "available_bytes": 1204125696
+      },
+      {
+        "at_monotonic_s": 215.602382,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69746688
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120976896
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 231391232
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199524352
+          }
+        ],
+        "available_bytes": 1204125696
+      },
+      {
+        "at_monotonic_s": 215.711086708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69746688
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120976896
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 231391232
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199524352
+          }
+        ],
+        "available_bytes": 1204125696
+      },
+      {
+        "at_monotonic_s": 215.821429791,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69746688
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120976896
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 231391232
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 199524352
+          }
+        ],
+        "available_bytes": 1222066176
+      },
+      {
+        "at_monotonic_s": 215.930295708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69632000
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120927744
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 231309312
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 192118784
+          }
+        ],
+        "available_bytes": 1223245824
+      },
+      {
+        "at_monotonic_s": 216.040562333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69632000
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120927744
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 231309312
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 192118784
+          }
+        ],
+        "available_bytes": 1233911808
+      },
+      {
+        "at_monotonic_s": 216.153141708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 69632000
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120927744
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 231309312
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 192118784
+          }
+        ],
+        "available_bytes": 1233911808
+      },
+      {
+        "at_monotonic_s": 216.261887333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66813952
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120911360
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229867520
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 188268544
+          }
+        ],
+        "available_bytes": 1233911808
+      },
+      {
+        "at_monotonic_s": 216.371134875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62177280
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120911360
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229867520
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 187138048
+          }
+        ],
+        "available_bytes": 1233911808
+      },
+      {
+        "at_monotonic_s": 216.481127375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62193664
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120911360
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229867520
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 187138048
+          }
+        ],
+        "available_bytes": 1233911808
+      },
+      {
+        "at_monotonic_s": 216.590860708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62078976
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120911360
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229867520
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 187138048
+          }
+        ],
+        "available_bytes": 1233911808
+      },
+      {
+        "at_monotonic_s": 216.70168025,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62078976
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120878592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229867520
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 187138048
+          }
+        ],
+        "available_bytes": 1233911808
+      },
+      {
+        "at_monotonic_s": 216.8139575,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62078976
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120878592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229867520
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 187138048
+          }
+        ],
+        "available_bytes": 1233911808
+      },
+      {
+        "at_monotonic_s": 216.921992041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62078976
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120878592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229867520
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 195526656
+          }
+        ],
+        "available_bytes": 1238827008
+      },
+      {
+        "at_monotonic_s": 217.03448825,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62078976
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120813056
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229801984
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 195624960
+          }
+        ],
+        "available_bytes": 1240629248
+      },
+      {
+        "at_monotonic_s": 217.148086583,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62095360
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120813056
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229801984
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 195969024
+          }
+        ],
+        "available_bytes": 1242038272
+      },
+      {
+        "at_monotonic_s": 217.258889375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62095360
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120813056
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229801984
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 196575232
+          }
+        ],
+        "available_bytes": 1238433792
+      },
+      {
+        "at_monotonic_s": 217.371877708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62095360
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120813056
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229801984
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 197033984
+          }
+        ],
+        "available_bytes": 1239334912
+      },
+      {
+        "at_monotonic_s": 217.483719333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62078976
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120813056
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229801984
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 183074816
+          }
+        ],
+        "available_bytes": 1224032256
+      },
+      {
+        "at_monotonic_s": 217.588717916,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62095360
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120813056
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229801984
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 168411136
+          }
+        ],
+        "available_bytes": 1224032256
+      },
+      {
+        "at_monotonic_s": 217.693913041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62095360
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120813056
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229801984
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 161611776
+          }
+        ],
+        "available_bytes": 1224032256
+      },
+      {
+        "at_monotonic_s": 217.802303458,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62095360
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120813056
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229801984
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 157597696
+          }
+        ],
+        "available_bytes": 1224032256
+      },
+      {
+        "at_monotonic_s": 217.914232541,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62095360
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120813056
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229801984
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 151748608
+          }
+        ],
+        "available_bytes": 1224032256
+      },
+      {
+        "at_monotonic_s": 218.025418375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62046208
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120600064
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229588992
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 143605760
+          }
+        ],
+        "available_bytes": 1210793984
+      },
+      {
+        "at_monotonic_s": 218.138433125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62062592
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120600064
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229588992
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 143605760
+          }
+        ],
+        "available_bytes": 1207959552
+      },
+      {
+        "at_monotonic_s": 218.25300125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62078976
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120600064
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 229621760
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 143605760
+          }
+        ],
+        "available_bytes": 1207992320
+      },
+      {
+        "at_monotonic_s": 218.359758791,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 61833216
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1103937536
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232669184
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 94814208
+          }
+        ],
+        "available_bytes": 1116520448
+      },
+      {
+        "at_monotonic_s": 218.468933958,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 61227008
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1103314944
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236388352
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 87441408
+          }
+        ],
+        "available_bytes": 1108508672
+      },
+      {
+        "at_monotonic_s": 218.574898625,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63029248
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120845824
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236634112
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 80429056
+          }
+        ],
+        "available_bytes": 1001078784
+      },
+      {
+        "at_monotonic_s": 218.68257625,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63045632
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1123598336
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236634112
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 146472960
+          }
+        ],
+        "available_bytes": 1046757376
+      },
+      {
+        "at_monotonic_s": 218.788077,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63340544
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1123942400
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236634112
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 171327488
+          }
+        ],
+        "available_bytes": 1059012608
+      },
+      {
+        "at_monotonic_s": 218.892027458,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63864832
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124630528
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 236634112
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 181485568
+          }
+        ],
+        "available_bytes": 1062600704
+      },
+      {
+        "at_monotonic_s": 218.999154041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65945600
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124335616
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 233947136
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 174358528
+          }
+        ],
+        "available_bytes": 1062600704
+      },
+      {
+        "at_monotonic_s": 219.110370166,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65961984
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124335616
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 233947136
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 174358528
+          }
+        ],
+        "available_bytes": 1058963456
+      },
+      {
+        "at_monotonic_s": 219.225277708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65961984
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124335616
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 233947136
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 174358528
+          }
+        ],
+        "available_bytes": 1062043648
+      },
+      {
+        "at_monotonic_s": 219.337497875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65929216
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124139008
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 232275968
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 174309376
+          }
+        ],
+        "available_bytes": 1063043072
+      },
+      {
+        "at_monotonic_s": 219.448872625,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65945600
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124073472
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 227688448
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 167395328
+          }
+        ],
+        "available_bytes": 1064796160
+      },
+      {
+        "at_monotonic_s": 219.560306916,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65994752
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124073472
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 227688448
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 167395328
+          }
+        ],
+        "available_bytes": 1062993920
+      },
+      {
+        "at_monotonic_s": 219.673703125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66011136
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124089856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 227688448
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 167395328
+          }
+        ],
+        "available_bytes": 1076576256
+      },
+      {
+        "at_monotonic_s": 219.782763333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65978368
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124089856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 227262464
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 166379520
+          }
+        ],
+        "available_bytes": 1123483648
+      },
+      {
+        "at_monotonic_s": 219.894172208,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65978368
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124089856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 223674368
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1123483648
+      },
+      {
+        "at_monotonic_s": 220.00573125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65978368
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124089856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 223674368
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1123483648
+      },
+      {
+        "at_monotonic_s": 220.117681291,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65978368
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124089856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 223674368
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1192984576
+      },
+      {
+        "at_monotonic_s": 220.229553041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65978368
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124089856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 223674368
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1185677312
+      },
+      {
+        "at_monotonic_s": 220.341675583,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65978368
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124089856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 223674368
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1192968192
+      },
+      {
+        "at_monotonic_s": 220.453297041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65978368
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124089856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 223674368
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1191903232
+      },
+      {
+        "at_monotonic_s": 220.5677085,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66076672
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124089856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 223674368
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1191051264
+      },
+      {
+        "at_monotonic_s": 220.678187458,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66076672
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124089856
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 223674368
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1186889728
+      },
+      {
+        "at_monotonic_s": 220.790369291,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66076672
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1121386496
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 222724096
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1191690240
+      },
+      {
+        "at_monotonic_s": 220.902651,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66076672
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1121386496
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 222724096
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1193525248
+      },
+      {
+        "at_monotonic_s": 221.013719166,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66076672
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1121386496
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 222724096
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1196294144
+      },
+      {
+        "at_monotonic_s": 221.126543375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66076672
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1121386496
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 222724096
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1196392448
+      },
+      {
+        "at_monotonic_s": 221.239265125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 66076672
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1121386496
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 220217344
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1195376640
+      },
+      {
+        "at_monotonic_s": 221.351903958,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 65896448
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1121370112
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 211877888
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1193443328
+      },
+      {
+        "at_monotonic_s": 221.465033083,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 64225280
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1121370112
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 202555392
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1193443328
+      },
+      {
+        "at_monotonic_s": 221.577446,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 64176128
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1121255424
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 202424320
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164429824
+          }
+        ],
+        "available_bytes": 1193443328
+      },
+      {
+        "at_monotonic_s": 221.693280125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 64176128
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1121255424
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 202424320
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164429824
+          }
+        ],
+        "available_bytes": 1193443328
+      },
+      {
+        "at_monotonic_s": 221.801327291,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63881216
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1121222656
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 202391552
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1193443328
+      },
+      {
+        "at_monotonic_s": 221.912736833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63881216
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120813056
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201981952
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1193443328
+      },
+      {
+        "at_monotonic_s": 222.02231325,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63766528
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120714752
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201883648
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1193443328
+      },
+      {
+        "at_monotonic_s": 222.134905833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63766528
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120714752
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201883648
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1189003264
+      },
+      {
+        "at_monotonic_s": 222.246793041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63782912
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120714752
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201883648
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1176895488
+      },
+      {
+        "at_monotonic_s": 222.359252833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63782912
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120714752
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201883648
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1177403392
+      },
+      {
+        "at_monotonic_s": 222.476197208,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63782912
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120714752
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201883648
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1177403392
+      },
+      {
+        "at_monotonic_s": 222.591420708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1177403392
+      },
+      {
+        "at_monotonic_s": 222.702741583,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1177403392
+      },
+      {
+        "at_monotonic_s": 222.814863666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1177403392
+      },
+      {
+        "at_monotonic_s": 222.925584583,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1177403392
+      },
+      {
+        "at_monotonic_s": 223.037136541,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164462592
+          }
+        ],
+        "available_bytes": 1177403392
+      },
+      {
+        "at_monotonic_s": 223.148050708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164478976
+          }
+        ],
+        "available_bytes": 1178451968
+      },
+      {
+        "at_monotonic_s": 223.260078041,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164478976
+          }
+        ],
+        "available_bytes": 1181483008
+      },
+      {
+        "at_monotonic_s": 223.374260875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164478976
+          }
+        ],
+        "available_bytes": 1181679616
+      },
+      {
+        "at_monotonic_s": 223.486277833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164478976
+          }
+        ],
+        "available_bytes": 1191313408
+      },
+      {
+        "at_monotonic_s": 223.597793291,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164478976
+          }
+        ],
+        "available_bytes": 1189068800
+      },
+      {
+        "at_monotonic_s": 223.709814,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63406080
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164478976
+          }
+        ],
+        "available_bytes": 1195851776
+      },
+      {
+        "at_monotonic_s": 223.821552416,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63422464
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201736192
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164478976
+          }
+        ],
+        "available_bytes": 1194033152
+      },
+      {
+        "at_monotonic_s": 223.93436125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63422464
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120567296
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201752576
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164478976
+          }
+        ],
+        "available_bytes": 1191608320
+      },
+      {
+        "at_monotonic_s": 224.048620333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63176704
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1120534528
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201719808
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164413440
+          }
+        ],
+        "available_bytes": 1191608320
+      },
+      {
+        "at_monotonic_s": 224.157354541,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62980096
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164364288
+          }
+        ],
+        "available_bytes": 1184481280
+      },
+      {
+        "at_monotonic_s": 224.26914625,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62930944
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1191870464
+      },
+      {
+        "at_monotonic_s": 224.383295833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 62930944
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1191329792
+      },
+      {
+        "at_monotonic_s": 224.49469025,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63733760
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1199489024
+      },
+      {
+        "at_monotonic_s": 224.6065465,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63750144
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201048064
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1198735360
+      },
+      {
+        "at_monotonic_s": 224.719059291,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63619072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201048064
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1199980544
+      },
+      {
+        "at_monotonic_s": 224.829768666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63619072
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201048064
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1196998656
+      },
+      {
+        "at_monotonic_s": 224.939061083,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63635456
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201048064
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1196998656
+      },
+      {
+        "at_monotonic_s": 225.049095833,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63635456
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201048064
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1196998656
+      },
+      {
+        "at_monotonic_s": 225.160952458,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63635456
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201048064
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1205092352
+      },
+      {
+        "at_monotonic_s": 225.272592916,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63635456
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201048064
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1204944896
+      },
+      {
+        "at_monotonic_s": 225.383494875,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63651840
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1119092736
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201048064
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164282368
+          }
+        ],
+        "available_bytes": 1203011584
+      },
+      {
+        "at_monotonic_s": 225.495767208,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63651840
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1198194688
+      },
+      {
+        "at_monotonic_s": 225.608931,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63651840
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1198194688
+      },
+      {
+        "at_monotonic_s": 225.721035708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63668224
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1198194688
+      },
+      {
+        "at_monotonic_s": 225.832703541,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63668224
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1198194688
+      },
+      {
+        "at_monotonic_s": 225.943795208,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63668224
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1198194688
+      },
+      {
+        "at_monotonic_s": 226.055198166,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63684608
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1198194688
+      },
+      {
+        "at_monotonic_s": 226.167026208,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63684608
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1212366848
+      },
+      {
+        "at_monotonic_s": 226.275319375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63684608
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1200848896
+      },
+      {
+        "at_monotonic_s": 226.382750125,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63684608
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1204142080
+      },
+      {
+        "at_monotonic_s": 226.487634666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63717376
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 201031680
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1218740224
+      },
+      {
+        "at_monotonic_s": 226.596874541,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63717376
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 198213632
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1218740224
+      },
+      {
+        "at_monotonic_s": 226.708199708,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63717376
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 198213632
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1218740224
+      },
+      {
+        "at_monotonic_s": 226.816800958,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63717376
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 198213632
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1218740224
+      },
+      {
+        "at_monotonic_s": 226.922091291,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63733760
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 198213632
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164249600
+          }
+        ],
+        "available_bytes": 1218740224
+      },
+      {
+        "at_monotonic_s": 227.028661666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63733760
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 198213632
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 164085760
+          }
+        ],
+        "available_bytes": 1218740224
+      },
+      {
+        "at_monotonic_s": 227.139289666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63733760
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 198213632
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 163954688
+          }
+        ],
+        "available_bytes": 1218740224
+      },
+      {
+        "at_monotonic_s": 227.250554333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 63733760
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 198213632
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 163954688
+          }
+        ],
+        "available_bytes": 1228980224
+      },
+      {
+        "at_monotonic_s": 227.358242333,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 64274432
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118830592
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 203964416
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 163282944
+          }
+        ],
+        "available_bytes": 1181925376
+      },
+      {
+        "at_monotonic_s": 227.468647166,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 64192512
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118797824
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 204996608
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 163135488
+          }
+        ],
+        "available_bytes": 1179402240
+      },
+      {
+        "at_monotonic_s": 227.578074666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 64192512
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1118797824
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 204996608
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 163135488
+          }
+        ],
+        "available_bytes": 1180729344
+      },
+      {
+        "at_monotonic_s": 227.685224666,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 60801024
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1124220928
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 205012992
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160202752
+          }
+        ],
+        "available_bytes": 1115832320
+      },
+      {
+        "at_monotonic_s": 227.791878791,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 60833792
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1125040128
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 205012992
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160202752
+          }
+        ],
+        "available_bytes": 1114390528
+      },
+      {
+        "at_monotonic_s": 227.899762958,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 60833792
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1125203968
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 205012992
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160317440
+          }
+        ],
+        "available_bytes": 1114390528
+      },
+      {
+        "at_monotonic_s": 228.004883791,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 61079552
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1125253120
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 205012992
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160612352
+          }
+        ],
+        "available_bytes": 1114390528
+      },
+      {
+        "at_monotonic_s": 228.110295375,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 61079552
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1125384192
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 205012992
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 160612352
+          }
+        ],
+        "available_bytes": 1114390528
+      },
+      {
+        "at_monotonic_s": 228.217664416,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 61079552
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1125482496
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 205012992
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 188743680
+          }
+        ],
+        "available_bytes": 1114390528
+      },
+      {
+        "at_monotonic_s": 228.32279925,
+        "processes": [
+          {
+            "pid": 2179,
+            "name": "Python",
+            "rss_bytes": 59457536
+          },
+          {
+            "pid": 2180,
+            "name": "llama-server",
+            "rss_bytes": 1125597184
+          },
+          {
+            "pid": 2198,
+            "name": "whisper-server",
+            "rss_bytes": 205012992
+          },
+          {
+            "pid": 2199,
+            "name": "Python",
+            "rss_bytes": 198492160
+          }
+        ],
+        "available_bytes": 1112850432
+      }
+    ]
+  }
+}

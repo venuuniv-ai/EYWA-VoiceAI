@@ -20,6 +20,7 @@ MODELS = ROOT / "models"
 
 HF = "https://huggingface.co"
 QWEN_REV = "91cad51170dc346986eccefdc2dd33a9da36ead9"
+QWEN_COMPACT_REV = "9217f5db79a29953eb74d5343926648285ec7e67"
 WHISPER_REV = "5359861c739e955e79d9a303bcbc70fb988958b1"
 PIPER_REV = "e7229f7d33a10e145e109b886d661984201ac3c4"
 SILERO_TAG = "v6.2.3"
@@ -37,6 +38,10 @@ class ModelFile:
 PIPER_BASE = f"{HF}/rhasspy/piper-voices/resolve/{PIPER_REV}/en/en_US/libritts_r/medium"
 
 FILES: list[ModelFile] = [
+    ModelFile(
+        "qwen-compact", "llm/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+        f"{HF}/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/{QWEN_COMPACT_REV}/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+        "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db", 491400032),
     ModelFile(
         "qwen", "llm/qwen2.5-1.5b-instruct-q4_k_m.gguf",
         f"{HF}/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/{QWEN_REV}/qwen2.5-1.5b-instruct-q4_k_m.gguf",

@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "date_utc": "2026-11-19T16:12:28+00:00",
+    "git_commit": "267649c2773ad25ae617231277b4b628e25a3976",
+    "git_dirty": true,
+    "hardware": {
+      "chip": "Apple M2",
+      "ram_bytes": 8589934592,
+      "cpu_count": 8
+    },
+    "os": "macOS 26.6.2",
+    "python": "3.11.17",
+    "packages": {
+      "onnxruntime": "1.31.1",
+      "piper-tts": "1.8.0",
+      "numpy": "2.4.6"
+    },
+    "native": {
+      "whisper.cpp": "v1.9.5",
+      "llama.cpp": "b12066"
+    },
+    "models": [
+      {
+        "dest": "llm/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+      },
+      {
+        "dest": "asr/ggml-base.en.bin",
+        "sha256": "a03779c86df3323075f5e796cb2ce5029f00ec8869eee3fdfb897afe36c6d002"
+      },
+      {
+        "dest": "asr/ggml-small.en.bin",
+        "sha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx",
+        "sha256": "10bb85e071d616fcf4071f369f1799d0491492ab3c5d552ec19fb548fac13195"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx.json",
+        "sha256": "b471dc60d2d8335e819c393d196d6fbf792817f40051257b269878505bc9afb3"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.MODEL_CARD",
+        "sha256": "0ccde6927e5bb4d743f4ea39618a9387ba18cca3351220a8a9cfdbc68b30fcb9"
+      },
+      {
+        "dest": "vad/silero_vad.onnx",
+        "sha256": "1a153a22f4509e292a94e67d6f9b85e8deb25b4988682b7e174c65279d8788e3"
+      }
+    ],
+    "settings": {
+      "llm_ctx": 4096,
+      "llm_parallel_slots": 1,
+      "llm_gpu_layers": "all (99)",
+      "threads": 4,
+      "temperature": 0,
+      "asr_backend": "whisper-server, Metal",
+      "vad_frame_samples": 512,
+      "tts_agent_speaker": 0,
+      "tts_caller_speaker": 20
+    },
+    "system_memory_at_start": {
+      "available_bytes": 1398521856
+    }
+  },
+  "source_sha256": "5fd739d572195d5ce5d1ff27ae3d0e2eed4116750a08773f35ba66f98a31b081",
+  "mode": "REAL",
+  "measurement": "PCM paced at 32 ms/frame; last Silero speech frame sent to first audio received",
+  "settings": {
+    "rounds": 1,
+    "warmup_turns": 1,
+    "silence_ms": 480,
+    "onset_ms": 96,
+    "min_speech_ms": 160,
+    "max_turn_ms": 15000,
+    "max_tokens": 96,
+    "cache_prompt": true,
+    "playback": "immediate transport consumer"
+  },
+  "runs": [],
+  "admission": {
+    "admitted": false,
+    "available_bytes": 1397473280,
+    "required_bytes": 1376780288,
+    "headroom_bytes": 536870912,
+    "reason": "REFUSED: loading 'first model: Qwen' needs 1313 MB; 1333 MB available; must keep 512 MB free afterwards",
+    "policy": "sequential per-model checks, 512 MB reserve before every load",
+    "isolated_group_rss_sum_bytes": 2027945984
+  },
+  "status": "blocked_memory_admission"
+}

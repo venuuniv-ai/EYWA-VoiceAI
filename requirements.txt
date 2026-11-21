@@ -1,6 +1,14 @@
 # Pinned versions verified in Phase 0 (Python 3.11).
+-c requirements-lock.txt
 numpy==2.4.6
 onnxruntime==1.31.1
 piper-tts==1.8.0  # GPL-3.0; see docs/adr/0003-tts-voice-and-license.md
 psutil==7.2.2
 pytest==9.2.0
+fastapi==0.163.2
+uvicorn==0.54.0
+httpx==0.28.1
+websockets==17.4
+opentelemetry-sdk==1.45.2
+pytest-asyncio==1.5.0
+playwright==1.65.2

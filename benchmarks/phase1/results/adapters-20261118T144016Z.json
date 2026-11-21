@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "date_utc": "2026-11-18T14:40:10+00:00",
+    "git_commit": "267649c2773ad25ae617231277b4b628e25a3976",
+    "git_dirty": true,
+    "hardware": {
+      "chip": "Apple M2",
+      "ram_bytes": 8589934592,
+      "cpu_count": 8
+    },
+    "os": "macOS 26.6.2",
+    "python": "3.11.17",
+    "packages": {
+      "onnxruntime": "1.31.1",
+      "piper-tts": "1.8.0",
+      "numpy": "2.4.6"
+    },
+    "native": {
+      "whisper.cpp": "v1.9.5",
+      "llama.cpp": "b12066"
+    },
+    "models": [
+      {
+        "dest": "llm/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+      },
+      {
+        "dest": "asr/ggml-base.en.bin",
+        "sha256": "a03779c86df3323075f5e796cb2ce5029f00ec8869eee3fdfb897afe36c6d002"
+      },
+      {
+        "dest": "asr/ggml-small.en.bin",
+        "sha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx",
+        "sha256": "10bb85e071d616fcf4071f369f1799d0491492ab3c5d552ec19fb548fac13195"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx.json",
+        "sha256": "b471dc60d2d8335e819c393d196d6fbf792817f40051257b269878505bc9afb3"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.MODEL_CARD",
+        "sha256": "0ccde6927e5bb4d743f4ea39618a9387ba18cca3351220a8a9cfdbc68b30fcb9"
+      },
+      {
+        "dest": "vad/silero_vad.onnx",
+        "sha256": "1a153a22f4509e292a94e67d6f9b85e8deb25b4988682b7e174c65279d8788e3"
+      }
+    ],
+    "settings": {
+      "llm_ctx": 4096,
+      "llm_parallel_slots": 1,
+      "llm_gpu_layers": "all (99)",
+      "threads": 4,
+      "temperature": 0,
+      "asr_backend": "whisper-server, Metal",
+      "vad_frame_samples": 512,
+      "tts_agent_speaker": 0,
+      "tts_caller_speaker": 20
+    },
+    "system_memory_at_start": {
+      "available_bytes": 2159935488
+    }
+  },
+  "source_sha256": "5bc6f40b18944044eefb7cac5b66682722b6df32c83c6433e4cd42509f4b797f",
+  "mode": "REAL",
+  "scope": "Each adapter separately. No simultaneous model group or physical audio.",
+  "checks": {
+    "piper": {
+      "status": "passed",
+      "cancel_process_exit_ms": 4.387207969557494,
+      "first_audio_ready_before_cancel": false,
+      "worker_reloaded_after_cancel": true,
+      "first_chunk_after_reload_ms": 104.43929099710658,
+      "samples_after_reload": 43520,
+      "output_rate": 22050
+    },
+    "whisper": {
+      "status": "passed",
+      "asr_ms": 137.98445899738,
+      "normalized_wer": 0.0,
+      "audio_s": 1.2539375
+    },
+    "llama": {
+      "status": "passed",
+      "slot_processing_before_close": true,
+      "slot_idle_after_close_ms": 29.122832987923175,
+      "followup_nonempty": true,
+      "followup_native_timings": {
+        "cache_n": 24,
+        "prompt_n": 12,
+        "prompt_ms": 405.342,
+        "prompt_per_token_ms": 33.7785,
+        "prompt_per_second": 29.604630164157676,
+        "predicted_n": 10,
+        "predicted_ms": 134.913,
+        "predicted_per_token_ms": 14.990333333333334,
+        "predicted_per_second": 66.70965733472681
+      }
+    }
+  }
+}

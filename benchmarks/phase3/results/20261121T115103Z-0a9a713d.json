@@ -1,0 +1,542 @@
+{
+  "id": "20261121T115103Z-0a9a713d",
+  "status": "completed",
+  "mode": "REAL \u2014 compact: qwen2.5-0.5b-instruct-q4_k_m; whisper.cpp / llama.cpp / Silero / Piper",
+  "metadata": {
+    "date_utc": "2026-11-21T11:51:03+00:00",
+    "git_commit": "267649c2773ad25ae617231277b4b628e25a3976",
+    "git_dirty": true,
+    "hardware": {
+      "chip": "Apple M2",
+      "ram_bytes": 8589934592,
+      "cpu_count": 8
+    },
+    "os": "macOS 26.6.2",
+    "python": "3.11.17",
+    "packages": {
+      "onnxruntime": "1.31.1",
+      "piper-tts": "1.8.0",
+      "numpy": "2.4.6"
+    },
+    "native": {
+      "whisper.cpp": "v1.9.5",
+      "llama.cpp": "b12066"
+    },
+    "models": [
+      {
+        "dest": "llm/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+        "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+      },
+      {
+        "dest": "llm/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+      },
+      {
+        "dest": "asr/ggml-base.en.bin",
+        "sha256": "a03779c86df3323075f5e796cb2ce5029f00ec8869eee3fdfb897afe36c6d002"
+      },
+      {
+        "dest": "asr/ggml-small.en.bin",
+        "sha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx",
+        "sha256": "10bb85e071d616fcf4071f369f1799d0491492ab3c5d552ec19fb548fac13195"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.onnx.json",
+        "sha256": "b471dc60d2d8335e819c393d196d6fbf792817f40051257b269878505bc9afb3"
+      },
+      {
+        "dest": "tts/en_US-libritts_r-medium.MODEL_CARD",
+        "sha256": "0ccde6927e5bb4d743f4ea39618a9387ba18cca3351220a8a9cfdbc68b30fcb9"
+      },
+      {
+        "dest": "vad/silero_vad.onnx",
+        "sha256": "1a153a22f4509e292a94e67d6f9b85e8deb25b4988682b7e174c65279d8788e3"
+      }
+    ],
+    "settings": {
+      "llm_ctx": 4096,
+      "llm_parallel_slots": 1,
+      "llm_gpu_layers": "all (99)",
+      "threads": 4,
+      "temperature": 0,
+      "asr_backend": "whisper-server, Metal",
+      "vad_frame_samples": 512,
+      "tts_agent_speaker": 0,
+      "tts_caller_speaker": 20
+    },
+    "system_memory_at_start": {
+      "available_bytes": 1506115584
+    }
+  },
+  "source_sha256": "152dd0021fcaa5836c61d5af12c723a2feb563ed1bd1600dbc86e5f7b1c0fa36",
+  "seed": 42,
+  "reference_date": "2026-11-21",
+  "suite_sha256": "1ebb1b8ee65da63b2e20e0e3898c90478edd0bc59a5a52bb8863c4a68a3ef981",
+  "suite_version": 1,
+  "caller_speaker": 20,
+  "agent_speaker": 0,
+  "transport": "production VoiceSession in-process client; real-time PCM; no browser or physical devices",
+  "scoring": "SQLite state, rendered spoken success claims, known-script WER; no LLM judge",
+  "scenarios": [
+    {
+      "id": "book_lee_monday",
+      "task_success": true,
+      "error_class": null,
+      "false_confirmations": 0,
+      "success_claims": 1,
+      "duplicate_writes": 0,
+      "asr_wer": 0.2222222222222222,
+      "voice_to_voice_ms": [
+        1371.2477080000372,
+        679.8521660000279
+      ],
+      "barge_in": [],
+      "barge_in_success": null,
+      "phone": false,
+      "state": [
+        {
+          "id": "85b52adfe0e541d39243ff2a8800be30",
+          "date": "2026-11-23",
+          "time": "15:00",
+          "clinician": "Lee",
+          "status": "confirmed"
+        }
+      ],
+      "foreign_unchanged": true,
+      "perturbations": {
+        "speed": 1.0,
+        "snr_db": null,
+        "seed": 42
+      },
+      "trace": [
+        {
+          "role": "caller",
+          "text": "Book Monday at 3 p.m. with Dr. Lee."
+        },
+        {
+          "role": "agent",
+          "text": "Book your appointment on Monday, November 23 at 3 PM with Doctor Lee, at the fictional Willowmere Demo Clinic, is that right?"
+        },
+        {
+          "role": "caller",
+          "text": "Yes."
+        },
+        {
+          "role": "agent",
+          "text": "Your appointment is confirmed. The local booking database has verified the change."
+        }
+      ],
+      "stage_metrics": [
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 2.304,
+          "speech_end_frame": 57,
+          "asr_ms": 175.72620900000402,
+          "asr_rtf": 0.07627005598958508,
+          "tools_ms": 484.76908300017385,
+          "tts_first_chunk_ms": 228.87283299996852,
+          "server_voice_to_voice_ms": 1371.2477080000372
+        },
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 1.056,
+          "speech_end_frame": 96,
+          "asr_ms": 132.73516699996435,
+          "asr_rtf": 0.12569618087117834,
+          "tools_ms": 3.975957999955426,
+          "tts_first_chunk_ms": 61.54037500004961,
+          "server_voice_to_voice_ms": 679.8521660000279
+        }
+      ],
+      "replay": "book_lee_monday.wav",
+      "synthetic_audio_only": true
+    },
+    {
+      "id": "book_rao_tuesday",
+      "task_success": true,
+      "error_class": null,
+      "false_confirmations": 0,
+      "success_claims": 1,
+      "duplicate_writes": 0,
+      "asr_wer": 0.2,
+      "voice_to_voice_ms": [
+        1248.8295830000698,
+        689.5027909999772
+      ],
+      "barge_in": [],
+      "barge_in_success": null,
+      "phone": false,
+      "state": [
+        {
+          "id": "e35b166e2115466eaf3dfe167c458e58",
+          "date": "2026-11-24",
+          "time": "10:00",
+          "clinician": "Rao",
+          "status": "confirmed"
+        }
+      ],
+      "foreign_unchanged": true,
+      "perturbations": {
+        "speed": 1.0,
+        "snr_db": null,
+        "seed": 43
+      },
+      "trace": [
+        {
+          "role": "caller",
+          "text": "Book Tuesday at 10am with Dr. Rao."
+        },
+        {
+          "role": "agent",
+          "text": "Book your appointment on Tuesday, November 24 at 10 AM with Doctor Rao, at the fictional Willowmere Demo Clinic, is that right?"
+        },
+        {
+          "role": "caller",
+          "text": "Yes, please."
+        },
+        {
+          "role": "agent",
+          "text": "Your appointment is confirmed. The local booking database has verified the change."
+        }
+      ],
+      "stage_metrics": [
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 2.336,
+          "speech_end_frame": 58,
+          "asr_ms": 167.84362499993222,
+          "asr_rtf": 0.07185086686640935,
+          "tools_ms": 440.29312499992557,
+          "tts_first_chunk_ms": 159.67887500005418,
+          "server_voice_to_voice_ms": 1248.8295830000698
+        },
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 1.376,
+          "speech_end_frame": 106,
+          "asr_ms": 147.05354199986687,
+          "asr_rtf": 0.10687030668594977,
+          "tools_ms": 3.885208999918177,
+          "tts_first_chunk_ms": 57.294041999966794,
+          "server_voice_to_voice_ms": 689.5027909999772
+        }
+      ],
+      "replay": "book_rao_tuesday.wav",
+      "synthetic_audio_only": true
+    },
+    {
+      "id": "book_lee_wednesday",
+      "task_success": true,
+      "error_class": null,
+      "false_confirmations": 0,
+      "success_claims": 1,
+      "duplicate_writes": 0,
+      "asr_wer": 0.2222222222222222,
+      "voice_to_voice_ms": [
+        1288.919792000097,
+        676.7677909999566
+      ],
+      "barge_in": [],
+      "barge_in_success": null,
+      "phone": false,
+      "state": [
+        {
+          "id": "6861d14889eb4b5aa955f82ab5e74410",
+          "date": "2026-11-25",
+          "time": "14:00",
+          "clinician": "Lee",
+          "status": "confirmed"
+        }
+      ],
+      "foreign_unchanged": true,
+      "perturbations": {
+        "speed": 1.0,
+        "snr_db": null,
+        "seed": 44
+      },
+      "trace": [
+        {
+          "role": "caller",
+          "text": "Book Wednesday at 2 p.m. with Dr. Lee."
+        },
+        {
+          "role": "agent",
+          "text": "Book your appointment on Wednesday, November 25 at 2 PM with Doctor Lee, at the fictional Willowmere Demo Clinic, is that right?"
+        },
+        {
+          "role": "caller",
+          "text": "Yes."
+        },
+        {
+          "role": "agent",
+          "text": "Your appointment is confirmed. The local booking database has verified the change."
+        }
+      ],
+      "stage_metrics": [
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 2.368,
+          "speech_end_frame": 59,
+          "asr_ms": 187.7279999998791,
+          "asr_rtf": 0.07927702702697598,
+          "tools_ms": 460.70541600010984,
+          "tts_first_chunk_ms": 159.78762499980803,
+          "server_voice_to_voice_ms": 1288.919792000097
+        },
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 1.088,
+          "speech_end_frame": 99,
+          "asr_ms": 135.44283299984272,
+          "asr_rtf": 0.12448789797779661,
+          "tools_ms": 2.63591699990684,
+          "tts_first_chunk_ms": 57.067625000172484,
+          "server_voice_to_voice_ms": 676.7677909999566
+        }
+      ],
+      "replay": "book_lee_wednesday.wav",
+      "synthetic_audio_only": true
+    },
+    {
+      "id": "book_rao_thursday",
+      "task_success": true,
+      "error_class": null,
+      "false_confirmations": 0,
+      "success_claims": 1,
+      "duplicate_writes": 0,
+      "asr_wer": 0.2222222222222222,
+      "voice_to_voice_ms": [
+        1274.1677910000635,
+        687.6831250001305
+      ],
+      "barge_in": [],
+      "barge_in_success": null,
+      "phone": false,
+      "state": [
+        {
+          "id": "edc9a91f1742413a8da07ccd0e65871f",
+          "date": "2026-11-26",
+          "time": "16:00",
+          "clinician": "Rao",
+          "status": "confirmed"
+        }
+      ],
+      "foreign_unchanged": true,
+      "perturbations": {
+        "speed": 1.0,
+        "snr_db": null,
+        "seed": 45
+      },
+      "trace": [
+        {
+          "role": "caller",
+          "text": "Book Thursday at 4 p.m. with Dr. Rao."
+        },
+        {
+          "role": "agent",
+          "text": "Book your appointment on Thursday, November 26 at 4 PM with Doctor Rao, at the fictional Willowmere Demo Clinic, is that right?"
+        },
+        {
+          "role": "caller",
+          "text": "Confirm."
+        },
+        {
+          "role": "agent",
+          "text": "Your appointment is confirmed. The local booking database has verified the change."
+        }
+      ],
+      "stage_metrics": [
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 2.496,
+          "speech_end_frame": 63,
+          "asr_ms": 188.2865000000038,
+          "asr_rtf": 0.0754352964743605,
+          "tools_ms": 446.43412499999613,
+          "tts_first_chunk_ms": 158.400249999886,
+          "server_voice_to_voice_ms": 1274.1677910000635
+        },
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 1.184,
+          "speech_end_frame": 104,
+          "asr_ms": 154.33741700007886,
+          "asr_rtf": 0.1303525481419585,
+          "tools_ms": 1.9735000000764558,
+          "tts_first_chunk_ms": 50.051667000161615,
+          "server_voice_to_voice_ms": 687.6831250001305
+        }
+      ],
+      "replay": "book_rao_thursday.wav",
+      "synthetic_audio_only": true
+    },
+    {
+      "id": "book_lee_friday",
+      "task_success": true,
+      "error_class": null,
+      "false_confirmations": 0,
+      "success_claims": 1,
+      "duplicate_writes": 0,
+      "asr_wer": 0.2222222222222222,
+      "voice_to_voice_ms": [
+        1265.5736669998805,
+        682.1637919999648
+      ],
+      "barge_in": [],
+      "barge_in_success": null,
+      "phone": false,
+      "state": [
+        {
+          "id": "51beecf834124425b0f5f7b19f1ecb46",
+          "date": "2026-11-27",
+          "time": "09:00",
+          "clinician": "Lee",
+          "status": "confirmed"
+        }
+      ],
+      "foreign_unchanged": true,
+      "perturbations": {
+        "speed": 1.0,
+        "snr_db": null,
+        "seed": 46
+      },
+      "trace": [
+        {
+          "role": "caller",
+          "text": "Book Friday at 9am with Dr. Lee."
+        },
+        {
+          "role": "agent",
+          "text": "Book your appointment on Friday, November 27 at 9 AM with Doctor Lee, at the fictional Willowmere Demo Clinic, is that right?"
+        },
+        {
+          "role": "caller",
+          "text": "Yes."
+        },
+        {
+          "role": "agent",
+          "text": "Your appointment is confirmed. The local booking database has verified the change."
+        }
+      ],
+      "stage_metrics": [
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 2.4,
+          "speech_end_frame": 60,
+          "asr_ms": 172.84079199998814,
+          "asr_rtf": 0.07201699666666173,
+          "tools_ms": 445.41083399985837,
+          "tts_first_chunk_ms": 166.199959000096,
+          "server_voice_to_voice_ms": 1265.5736669998805
+        },
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 1.088,
+          "speech_end_frame": 99,
+          "asr_ms": 139.94333300001927,
+          "asr_rtf": 0.1286243869485471,
+          "tools_ms": 3.3257089999096934,
+          "tts_first_chunk_ms": 58.20020800001657,
+          "server_voice_to_voice_ms": 682.1637919999648
+        }
+      ],
+      "replay": "book_lee_friday.wav",
+      "synthetic_audio_only": true
+    },
+    {
+      "id": "phone_booking",
+      "task_success": true,
+      "error_class": null,
+      "false_confirmations": 0,
+      "success_claims": 1,
+      "duplicate_writes": 0,
+      "asr_wer": 0.2222222222222222,
+      "voice_to_voice_ms": [
+        1225.5449999999928,
+        647.4658750000617
+      ],
+      "barge_in": [],
+      "barge_in_success": null,
+      "phone": true,
+      "state": [
+        {
+          "id": "6964ea87aa3345c4b246f26ab8c45091",
+          "date": "2026-11-23",
+          "time": "15:00",
+          "clinician": "Lee",
+          "status": "confirmed"
+        }
+      ],
+      "foreign_unchanged": true,
+      "perturbations": {
+        "speed": 1.0,
+        "snr_db": null,
+        "seed": 47
+      },
+      "trace": [
+        {
+          "role": "caller",
+          "text": "Book Monday at 3 p.m. with Dr. Lee."
+        },
+        {
+          "role": "agent",
+          "text": "Book your appointment on Monday, November 23 at 3 PM with Doctor Lee, at the fictional Willowmere Demo Clinic, is that right?"
+        },
+        {
+          "role": "caller",
+          "text": "Yes."
+        },
+        {
+          "role": "agent",
+          "text": "Your appointment is confirmed. The local booking database has verified the change."
+        }
+      ],
+      "stage_metrics": [
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 2.304,
+          "speech_end_frame": 57,
+          "asr_ms": 187.48116599999776,
+          "asr_rtf": 0.08137203385416569,
+          "tools_ms": 400.8751249998568,
+          "tts_first_chunk_ms": 155.8390000000145,
+          "server_voice_to_voice_ms": 1225.5449999999928
+        },
+        {
+          "vad_endpoint_ms": 480,
+          "asr_audio_s": 1.024,
+          "speech_end_frame": 95,
+          "asr_ms": 123.41945799994392,
+          "asr_rtf": 0.12052681445307023,
+          "tools_ms": 1.184500000135813,
+          "tts_first_chunk_ms": 41.784500000176195,
+          "server_voice_to_voice_ms": 647.4658750000617
+        }
+      ],
+      "replay": "phone_booking.wav",
+      "synthetic_audio_only": true
+    }
+  ],
+  "summary": {
+    "scenario_count": 6,
+    "task_success_rate": 1.0,
+    "false_confirmation_rate": 0.0,
+    "duplicate_write_rate": 0.0,
+    "asr_wer": 0.21851851851851847,
+    "phone_asr_wer": 0.2222222222222222,
+    "voice_to_voice_ms": {
+      "n": 12,
+      "p50": 957.523895499985,
+      "p95": 1325.96735420007
+    },
+    "barge_in_success_rate": null,
+    "barge_in_stop_ms": {
+      "n": 0,
+      "p50": null,
+      "p95": null
+    }
+  }
+}

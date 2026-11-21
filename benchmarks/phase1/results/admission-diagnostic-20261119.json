@@ -1,0 +1,103 @@
+{
+  "mode": "REAL",
+  "purpose": "sequential per-model admission diagnostic; reserve unchanged",
+  "stages": [
+    {
+      "stage": "before",
+      "available_bytes": 2190852096,
+      "processes": [
+        {
+          "pid": 1964,
+          "name": "Python",
+          "rss_bytes": 65372160
+        }
+      ]
+    },
+    {
+      "stage": "llm ready",
+      "available_bytes": 1386659840,
+      "processes": [
+        {
+          "pid": 1964,
+          "name": "Python",
+          "rss_bytes": 53673984
+        },
+        {
+          "pid": 1965,
+          "name": "llama-server",
+          "rss_bytes": 1321549824
+        }
+      ]
+    },
+    {
+      "stage": "asr ready",
+      "available_bytes": 1067237376,
+      "processes": [
+        {
+          "pid": 1964,
+          "name": "Python",
+          "rss_bytes": 53313536
+        },
+        {
+          "pid": 1965,
+          "name": "llama-server",
+          "rss_bytes": 1317945344
+        },
+        {
+          "pid": 1986,
+          "name": "whisper-server",
+          "rss_bytes": 286261248
+        }
+      ]
+    },
+    {
+      "stage": "vad ready",
+      "available_bytes": 1063649280,
+      "processes": [
+        {
+          "pid": 1964,
+          "name": "Python",
+          "rss_bytes": 81494016
+        },
+        {
+          "pid": 1965,
+          "name": "llama-server",
+          "rss_bytes": 1317928960
+        },
+        {
+          "pid": 1986,
+          "name": "whisper-server",
+          "rss_bytes": 286261248
+        }
+      ]
+    },
+    {
+      "stage": "tts ready",
+      "available_bytes": 1114865664,
+      "processes": [
+        {
+          "pid": 1964,
+          "name": "Python",
+          "rss_bytes": 49102848
+        },
+        {
+          "pid": 1965,
+          "name": "llama-server",
+          "rss_bytes": 1270431744
+        },
+        {
+          "pid": 1986,
+          "name": "whisper-server",
+          "rss_bytes": 280297472
+        },
+        {
+          "pid": 1987,
+          "name": "Python",
+          "rss_bytes": 142049280
+        }
+      ]
+    }
+  ],
+  "status": "all_models_loaded",
+  "evidence_scope": "Exploratory startup diagnostic only; unversioned source when captured. Use live reports for reproducible timings and peaks."
+}
