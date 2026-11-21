@@ -59,6 +59,7 @@ class IngressLine:
         self.settings, self.deliver = settings, deliver
         self.random = random.Random(settings.seed)
         self.codec = PhoneCodec()
+        self.epoch = 0
         self.queue = asyncio.Queue(maxsize=64)
         self.task = asyncio.create_task(self.run())
 
@@ -70,13 +71,20 @@ class IngressLine:
             transformed = b"\0" * len(transformed)
         if self.queue.full():
             raise ValueError("Phone ingress queue overflow")
-        await self.queue.put((asyncio.get_running_loop().time() + delay, transformed))
+        await self.queue.put((asyncio.get_running_loop().time() + delay, transformed, self.epoch))
+
+    def discard_pending(self):
+        self.epoch += 1
+        self.codec = PhoneCodec()
+        while not self.queue.empty():
+            self.queue.get_nowait()
 
     async def run(self):
         while True:
-            deadline, pcm = await self.queue.get()
+            deadline, pcm, epoch = await self.queue.get()
             await asyncio.sleep(max(0, deadline - asyncio.get_running_loop().time()))
-            await self.deliver(pcm)
+            if epoch == self.epoch:
+                await self.deliver(pcm)
 
     async def close(self):
         self.task.cancel()

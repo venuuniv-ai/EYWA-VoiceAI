@@ -15,6 +15,13 @@ The latest validation state and remaining limitations are in [docs/status.md](do
 Implementation is not a claim that every adversarial voice scenario succeeds; see
 actual reports under [benchmarks/](benchmarks/).
 
+The final measured suite passed **30/30 task expectations**, with **zero false
+confirmations and duplicate booking writes**. Voice-to-voice p50/p95 was **1,054 /
+1,287 ms**; conservative backend/runner peak RSS was **1.386 GB**. Mean known-script
+ASR WER was **19.62%** (phone cases **22.22%**). These are bounded synthetic-fixture
+results, not guarantees for arbitrary callers. See [the full report and measurement
+limits](benchmarks/phase3/summary.md).
+
 [![Recorded synthetic booking demo](docs/demo.png)](docs/demo.mp4)
 
 [Watch the recorded booking demo](docs/demo.mp4) — labelled synthetic caller,

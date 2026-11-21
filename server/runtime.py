@@ -17,12 +17,10 @@ from pipeline.profiling import measured_command, signal_owned
 from server.tracing import LocalTracing
 
 ROOT = Path(__file__).resolve().parents[1]
-# Sum isolated Phase 0 maxima because Piper and VAD now have separate processes.
-MEASURED_MODELS_MB = 1313 + 322 + 76 + 223
 LLM_PROFILES = {
     "balanced": {"model": "models/llm/qwen2.5-1.5b-instruct-q4_k_m.gguf", "memory_mb": 1313},
-    # Isolated peak 606.14 MB; pipeline peak 616.08 MB. Budget includes margin.
-    "compact": {"model": "models/llm/qwen2.5-0.5b-instruct-q4_k_m.gguf", "memory_mb": 640},
+    # Full evaluation reached 640.875 MiB; this admission budget includes margin.
+    "compact": {"model": "models/llm/qwen2.5-0.5b-instruct-q4_k_m.gguf", "memory_mb": 680},
 }
 
 

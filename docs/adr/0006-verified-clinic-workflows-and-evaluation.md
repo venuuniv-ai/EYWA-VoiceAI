@@ -1,6 +1,6 @@
 # 0006: Verified fictional appointments and audio evaluation
 
-Date: 2026-11-21. Status: implemented; validation occurs after remaining phase implementation at the user's request.
+Date: 2026-11-21. Status: accepted after unit/browser checks and the full real audio suite.
 
 ## Context and decision
 

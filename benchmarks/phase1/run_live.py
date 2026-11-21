@@ -33,6 +33,7 @@ from pipeline.vad import SileroVAD
 from server.runtime import LLM_PROFILES
 from turn.endpoint import Endpointer
 from pipeline.profiling import signal_owned
+from pipeline.tts import PIPER_MEMORY_MB
 
 
 def source_hash():
@@ -132,7 +133,7 @@ async def run(rounds, browser_checks=False, profile="balanced"):
         "required_bytes": admission.required_bytes, "headroom_bytes": admission.headroom_bytes,
         "reason": admission.reason}
     record["admission"]["policy"] = "sequential per-model checks, 512 MB reserve before every load"
-    record["admission"]["isolated_group_rss_sum_bytes"] = (llm_settings["memory_mb"] + 322 + 76 + 223) * MB
+    record["admission"]["sum_admission_budgets_bytes"] = (llm_settings["memory_mb"] + 322 + 76 + PIPER_MEMORY_MB) * MB
     if not admission.admitted:
         record["status"] = "blocked_memory_admission"
         return record

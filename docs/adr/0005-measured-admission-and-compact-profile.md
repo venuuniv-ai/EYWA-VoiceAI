@@ -2,6 +2,14 @@
 
 Date: 2026-11-19. Status: implemented; live validation results are in Phase 1 reports.
 
+Update 2026-11-21: the longer 30-scenario Connect/Eval workload reached 640.875
+MiB for compact Qwen and approximately 291 MiB for Piper (longer read-backs and
+both speakers). The current admission budgets are therefore **680 MiB** and
+**320 MiB**, respectively, including explicit margins. The raw run is
+`benchmarks/phase3/results/20261121T121417Z-d67271f5.json`. Earlier values below
+are historical measurements/policy, not the current budgets. The 512 MiB reserve
+is unchanged. Total observed process-peak upper bound remained below 2.5 GB.
+
 ## Context
 
 The initial combined guard added isolated RSS peaks and required that entire sum

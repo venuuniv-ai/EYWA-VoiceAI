@@ -203,12 +203,27 @@ async def test_ingress_delay_is_not_accumulated_once_per_packet():
     finally:await line.close()
 
 
+async def test_hold_epoch_discards_even_an_inflight_delayed_audio_packet():
+    received=[]
+    async def deliver(pcm):received.append(pcm)
+    line=IngressLine(PhoneSettings(latency_ms=40),deliver)
+    try:
+        await line.put(b'\x10\x27'*512)
+        await asyncio.sleep(0)  # The worker now owns the old packet during its delay.
+        line.discard_pending()
+        await line.put(b'\0'*1024)
+        async with asyncio.timeout(1):
+            while not received:await asyncio.sleep(.005)
+        assert received==[b'\0'*1024]
+    finally:await line.close()
+
+
 def test_http_caller_capability_is_required_and_isolates_records(tmp_path):
     with TestClient(create_app(FakeRuntime,data_dir=tmp_path)) as client:
         assert client.get('/api/bookings').status_code == 401
-        client.get('/api/session')
+        established=client.get('/api/session')
         token=client.cookies.get('eywa_caller')
-        assert 'HttpOnly' in client.get('/api/session').headers.get('set-cookie','HttpOnly')
+        assert 'HttpOnly' in established.headers.get('set-cookie','')
         store=client.app.state.bookings
         owner=store.resolve(token)
         # Use store's real current date for the HTTP test.

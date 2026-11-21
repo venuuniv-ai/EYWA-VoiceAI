@@ -225,6 +225,8 @@ def create_app(runtime_factory=Runtime, data_dir=None):
                     if len(pcm) != 1024:
                         await ws.close(code=1003, reason="Expected 512 PCM16 samples")
                         break
+                    if call_state.state != "connected":
+                        continue
                     if line:
                         if line.task.done():
                             line.task.result()
@@ -248,6 +250,9 @@ def create_app(runtime_factory=Runtime, data_dir=None):
                         call_state.change(event.get("state"))
                         await session.interrupt()
                         session.endpoint.reset()
+                        app.state.runtime.vad.reset()
+                        if line:
+                            line.discard_pending()
                         await send({"type": "call_state", "state": call_state.state})
                         if call_state.state == "hangup":
                             break

@@ -5,10 +5,9 @@
 At the user's request, the remaining phases were implemented before the final
 test pass. Connect, the 30-scenario real audio evaluator, dashboard/report replay,
 setup documentation, GPL licensing/attribution and a labelled recorded demo are
-now implemented. **106 tests pass**. Earlier real runs and their failures remain
-saved; targeted reruns pass the noisy-confirmation and stale-time-correction cases.
-The final full-suite run from a committed source revision is the remaining
-acceptance check before the GitHub push. Later entries record its actual results.
+implemented and validated. All phases are accepted within the documented local,
+single-clinic scope. The final real run passed 30/30 scenario expectations with
+zero false confirmations or duplicate writes. See the final acceptance entry below.
 
 The repository has been created privately at `venuuniv-ai/EYWA-VoiceAI`; model
 weights, dependencies, databases, caller cookies and runtime audio are excluded
@@ -225,3 +224,97 @@ saved and are excluded from successful tables.
 
 Phase 2 (EYWA Connect) is now eligible to begin. It has not been implemented or
 started by this status update. The app remains running for the user's current call.
+
+## Phases 2–5 accepted (2026-11-21)
+
+Final local checks: **107 tests passed**, including seven Playwright browser
+tests, plus the TypeScript/Vite production build. Dependency consistency and
+`git diff --check` pass. The single upstream Starlette/httpx deprecation warning
+is retained. It does not affect the assertions.
+
+### Phase 2 — verified business actions and telephone simulation
+
+- Fictional Willowmere Demo Clinic booking/cancellation uses collect → confirm →
+  commit → report. Complete playback acknowledgement plus an explicit affirmation
+  or DTMF 1 is required. Intervening requests invalidate prior confirmation.
+- Schema-constrained local LLM output is Pydantic-validated and field-grounded.
+  SQLite writes are transactional, authorized and idempotent. Concurrent retries,
+  repeated semantic requests, key conflicts, superseded writes, foreign record
+  access, injected commit failures and stale read-backs have passing tests.
+- Real G.711 encode/decode, low-pass/resampling, DTMF PCM detection, bounded seeded
+  ingress delay/jitter/loss, and simulated call states are implemented. Held audio
+  is dropped; delayed packets from an earlier hold epoch cannot reappear on resume.
+- Real phone-quality ASR WER is measured in the final suite: **22.22%** under the
+  published normalization, including formatting differences such as 10am/ten AM.
+  It is not presented as perfect transcription accuracy.
+
+### Phase 3 — real audio-in/audio-out evaluation
+
+Final report:
+[`20261121T121417Z-d67271f5.json`](../benchmarks/phase3/results/20261121T121417Z-d67271f5.json).
+It ran from clean commit `561f442633afaa261d900b385bb55909a8cc6d82` with seed 42,
+reference date 2026-11-21, real compact Qwen/whisper.cpp/Piper/Silero models, and
+caller speaker 20 versus agent speaker 0. The subsequent changes tighten model
+admission budgets based on observed peaks and discard held ingress packets; they
+do not change these recorded model outputs or timing observations.
+
+| Metric | Actual final result |
+|---|---:|
+| Unattended scenarios | 30 |
+| Task expectations met | 30/30 |
+| False confirmations | 0 of 19 outgoing success claims |
+| Duplicate booking writes | 0 |
+| Mean known-script ASR WER | 19.62% |
+| Mean phone-case ASR WER | 22.22% |
+| Voice-to-voice p50 / p95 | 1,054 / 1,287 ms |
+| Planned interruption handling | 2/2 |
+| Synthetic playback-stop p50 / p95 | 31.8 / 32.0 ms |
+| Conservative backend/runner peak-RSS sum | 1.386 GB |
+
+Raw per-scenario state, expectations, transcripts, stage metrics, perturbations,
+model/source/scenario hashes and native memory output are in the JSON. Earlier
+93.3% and 96.7% runs are retained, including the failures that produced the
+confirmation-variant and stale-correction fixes. No expectations were weakened.
+The generated table and measurement limits are in
+[`benchmarks/phase3/summary.md`](../benchmarks/phase3/summary.md).
+
+The full workload exposed higher peaks than short isolated prompts: compact LLM
+640.875 MiB and Piper approximately 291 MiB. Current admission budgets are **680
+MiB / 320 MiB**, including margins; the **512 MiB reserve is unchanged**. These
+policy values are not substituted for the measured RSS results.
+
+### Phase 4 — dashboard
+
+- React provides live/clinic modes, phone controls, call states, spoken transcript,
+  per-turn timings, pending/verified booking state, DTMF and local record display.
+- The report browser shows aggregate metrics, every scenario's state and trace,
+  downloadable JSON, and synthetic conversation replay. Evaluation start/stop and
+  progress share the one-call resource slot; only the initiating caller can stop it.
+- Playwright covers capture/stop cleanup, stale socket events, silent input clocks,
+  report browsing, scenario replay controls and simulated phone/hold controls.
+- A real browser booking was recorded and checked for completed read-back,
+  committed state and played success audio. It is labelled synthetic caller input,
+  with real local inference. Physical mic/reply/interruption was separately
+  confirmed by the user in Phase 1.
+
+### Phase 5 — reproducible portfolio delivery
+
+- README includes offline setup, one-command start/tests, profiles, supported
+  workflow, architecture diagram, evaluation, privacy and explicit limitations.
+- Python transitive constraints, npm lockfile, pinned native builds and verified
+  model SHA-256 downloads are included. Models/dependencies/runtime data are ignored.
+- GPL-3.0-or-later LICENSE and third-party/LibriTTS-R attribution are recorded.
+- [`docs/demo.mp4`](demo.mp4) contains H.264 video and AAC audio from the real
+  synthetic-caller booking session; [`docs/demo.png`](demo.png) provides a preview.
+  PCM is reconstructed for the labelled recording, not captured from a human mic.
+- The private GitHub repository is `https://github.com/venuuniv-ai/EYWA-VoiceAI`.
+
+### Limits retained after acceptance
+
+This is one fictional appointment domain, one concurrent call/eval, and restricted
+date/time language. No real PSTN, human transfer, real-world identity assurance,
+claims intake, or medical advice is provided. Exact partial-word playback history,
+quantitative echo/acoustic latency, broad real-caller/noise performance and automatic
+native-server crash recovery remain limitations, not completed features. Evaluation
+uses a paced in-process VoiceSession client; separate real browser tests cover the
+WebSocket/device-replacement path. All published claims are scoped to their fixtures.

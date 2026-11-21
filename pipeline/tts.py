@@ -9,6 +9,9 @@ from pipeline.admission import MB, check_admission
 from pipeline.profiling import measured_command, signal_owned
 
 ROOT = Path(__file__).resolve().parents[1]
+# Long Connect/eval read-backs reached 291 MiB in the final 30-scenario run.
+# This admission policy includes margin; it is not a claimed measured RSS value.
+PIPER_MEMORY_MB = 320
 
 
 class PiperTTS:
@@ -22,7 +25,7 @@ class PiperTTS:
     async def start(self):
         if self.proc is not None and self.proc.returncode is None:
             return
-        check_admission("Piper worker", 223 * MB)
+        check_admission("Piper worker", PIPER_MEMORY_MB * MB)
         self.worker_number += 1
         command, self.profiled = measured_command([sys.executable, "-m", "pipeline.piper_worker",
             str(ROOT / "models/tts/en_US-libritts_r-medium.onnx")], f"piper-{self.worker_number}")
